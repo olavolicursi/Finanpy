@@ -9,9 +9,9 @@
   - [X] 1.1.1.2 Configurar AUTH_USER_MODEL = 'users.User'
   - [X] 1.1.1.3 Configurar LANGUAGE_CODE = 'pt-br'
   - [X] 1.1.1.4 Configurar TIME_ZONE = 'America/Sao_Paulo'
-  - [ ] 1.1.1.5 Configurar diretório TEMPLATES (templates/)
-  - [ ] 1.1.1.6 Configurar STATICFILES_DIRS e STATIC_ROOT
-  - [ ] 1.1.1.7 Configurar LOGIN_URL, LOGIN_REDIRECT_URL e LOGOUT_REDIRECT_URL
+  - [X] 1.1.1.5 Configurar diretório TEMPLATES (templates/)
+  - [X] 1.1.1.6 Configurar STATICFILES_DIRS e STATIC_ROOT
+  - [X] 1.1.1.7 Configurar LOGIN_URL, LOGIN_REDIRECT_URL e LOGOUT_REDIRECT_URL
 
 - [ ] **1.1.2** Configurar TailwindCSS
   - [ ] 1.1.2.1 Criar package.json com dependências do Tailwind
