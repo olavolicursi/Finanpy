@@ -13,20 +13,20 @@
   - [X] 1.1.1.6 Configurar STATICFILES_DIRS e STATIC_ROOT
   - [X] 1.1.1.7 Configurar LOGIN_URL, LOGIN_REDIRECT_URL e LOGOUT_REDIRECT_URL
 
-- [ ] **1.1.2** Configurar TailwindCSS
-  - [ ] 1.1.2.1 Criar package.json com dependências do Tailwind
-  - [ ] 1.1.2.2 Criar tailwind.config.js com configuração de paths
-  - [ ] 1.1.2.3 Criar arquivo CSS base com diretivas @tailwind
-  - [ ] 1.1.2.4 Configurar script de build do Tailwind
-  - [ ] 1.1.2.5 Gerar output.css inicial
+- [X] **1.1.2** Configurar TailwindCSS
+  - [X] 1.1.2.1 Criar package.json com dependências do Tailwind
+  - [X] 1.1.2.2 Criar tailwind.config.js com configuração de paths
+  - [X] 1.1.2.3 Criar arquivo CSS base com diretivas @tailwind
+  - [X] 1.1.2.4 Configurar script de build do Tailwind
+  - [X] 1.1.2.5 Gerar output.css inicial
 
-- [ ] **1.1.3** Criar estrutura de templates
-  - [ ] 1.1.3.1 Criar diretório templates/ na raiz
-  - [ ] 1.1.3.2 Criar diretório templates/components/
-  - [ ] 1.1.3.3 Criar diretório templates/public/
-  - [ ] 1.1.3.4 Criar diretório templates/dashboard/
-  - [ ] 1.1.3.5 Criar diretório static/css/
-  - [ ] 1.1.3.6 Criar diretório static/js/
+- [X] **1.1.3** Criar estrutura de templates
+  - [X] 1.1.3.1 Criar diretório templates/ na raiz
+  - [X] 1.1.3.2 Criar diretório templates/components/
+  - [X] 1.1.3.3 Criar diretório templates/public/
+  - [X] 1.1.3.4 Criar diretório templates/dashboard/
+  - [X] 1.1.3.5 Criar diretório static/css/
+  - [X] 1.1.3.6 Criar diretório static/js/
 
 #### 1.2 Model de Usuário Customizado
 
