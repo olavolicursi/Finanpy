@@ -22,7 +22,7 @@
 10. [User Stories](#10-user-stories)
 11. [Métricas de Sucesso](#11-métricas-de-sucesso)
 12. [Riscos e Mitigações](#12-riscos-e-mitigações)
-13. [Lista de Tarefas](#13-lista-de-tarefas)
+13. [Lista de Tarefas](TASKS.md)
 
 ---
 
@@ -48,6 +48,7 @@ O Finanpy é uma aplicação web monolítica construída com Django, focada em s
 
 | Característica | Descrição |
 |----------------|-----------|
+
 | **Plataforma** | Web (responsivo para desktop e mobile) |
 | **Idioma da Interface** | Português Brasileiro |
 | **Idioma do Código** | Inglês |

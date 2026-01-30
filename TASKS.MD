@@ -1,8 +1,8 @@
-## Lista de Tarefas
+# Lista de Tarefas
 
-### Sprint 1: Configuração Inicial e Autenticação
+## Sprint 1: Configuração Inicial e Autenticação
 
-#### 1.1 Configuração do Projeto
+### 1.1 Configuração do Projeto
 
 - [X] **1.1.1** Configurar settings.py
   - [X] 1.1.1.1 Adicionar apps ao INSTALLED_APPS (users, accounts, categories, transactions)
