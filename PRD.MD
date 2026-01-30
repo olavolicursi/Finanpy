@@ -172,7 +172,14 @@ O propósito do Finanpy é fornecer uma ferramenta simples e eficiente para que 
 | RF-PUB-02 | Link para cadastro | Botão/link para página de registro |
 | RF-PUB-03 | Link para login | Botão/link para página de login |
 
-### 6.7 Flowchart - Fluxos de UX
+### 6.7 Módulo de Perfil (RF-PROF)
+
+| ID | Requisito | Descrição |
+|----|-----------|-----------|
+| RF-PROF-01 | Visualizar perfil | O usuário deve poder visualizar seus dados cadastrais |
+| RF-PROF-02 | Editar perfil | O usuário deve poder alterar seu nome, avatar e informações complementares |
+
+### 6.8 Flowchart - Fluxos de UX
 
 ```mermaid
 flowchart TD
@@ -306,6 +313,15 @@ finanpy/
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
+├── profiles/               # App de perfis
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
 ├── accounts/               # App de contas bancárias
 │   ├── __init__.py
 │   ├── admin.py
@@ -359,11 +375,22 @@ finanpy/
 
 ```mermaid
 erDiagram
+    User ||--|| Profile : has
     User ||--o{ Account : has
     User ||--o{ Category : has
     User ||--o{ Transaction : has
     Account ||--o{ Transaction : contains
     Category ||--o{ Transaction : categorizes
+
+    Profile {
+        int id PK
+        int user_id FK
+        string avatar
+        string bio
+        string phone
+        datetime created_at
+        datetime updated_at
+    }
 
     User {
         int id PK
@@ -415,7 +442,20 @@ erDiagram
 
 ### 8.4 Descrição dos Models
 
+#### Profile (profiles/models.py)
+
+```python
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
+    bio = models.TextField(max_length=500, blank=True)
+    phone = models.CharField(max_length=20, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+```
+
 #### User (users/models.py)
+
 ```python
 class User(AbstractUser):
     username = None
@@ -428,6 +468,7 @@ class User(AbstractUser):
 ```
 
 #### Account (accounts/models.py)
+
 ```python
 class Account(models.Model):
     ACCOUNT_TYPES = [
@@ -449,6 +490,7 @@ class Account(models.Model):
 ```
 
 #### Category (categories/models.py)
+
 ```python
 class Category(models.Model):
     CATEGORY_TYPES = [
@@ -466,6 +508,7 @@ class Category(models.Model):
 ```
 
 #### Transaction (transactions/models.py)
+
 ```python
 class Transaction(models.Model):
     TRANSACTION_TYPES = [
@@ -876,11 +919,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### 10.1 Épico 1: Autenticação e Acesso
 
 #### US-001: Visualizar Landing Page
+
 **Como** visitante  
 **Quero** acessar a página inicial do sistema  
 **Para** conhecer o produto e decidir se quero me cadastrar
 
 **Critérios de Aceite:**
+
 - [ ] A landing page é acessível sem autenticação
 - [ ] Exibe informações sobre o Finanpy
 - [ ] Possui botão para cadastro
@@ -888,11 +933,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Design responsivo e moderno com tema escuro
 
 #### US-002: Cadastrar Novo Usuário
+
 **Como** visitante  
 **Quero** criar uma conta no sistema  
 **Para** ter acesso às funcionalidades do Finanpy
 
 **Critérios de Aceite:**
+
 - [ ] Formulário solicita: nome, sobrenome, email e senha
 - [ ] Email deve ser único no sistema
 - [ ] Senha deve ter no mínimo 8 caracteres
@@ -901,11 +948,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Validações de campo com feedback visual
 
 #### US-003: Fazer Login
+
 **Como** usuário cadastrado  
 **Quero** acessar o sistema com meu email e senha  
 **Para** utilizar as funcionalidades do Finanpy
 
 **Critérios de Aceite:**
+
 - [ ] Login é feito com email (não username)
 - [ ] Senha é validada corretamente
 - [ ] Credenciais inválidas exibem mensagem de erro
@@ -913,11 +962,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Sessão é mantida enquanto o usuário navega
 
 #### US-004: Fazer Logout
+
 **Como** usuário autenticado  
 **Quero** encerrar minha sessão  
 **Para** sair do sistema com segurança
 
 **Critérios de Aceite:**
+
 - [ ] Botão de logout visível no menu
 - [ ] Ao clicar, sessão é encerrada
 - [ ] Usuário é redirecionado para a landing page
@@ -928,11 +979,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### 10.2 Épico 2: Gestão de Contas Bancárias
 
 #### US-005: Listar Contas Bancárias
+
 **Como** usuário autenticado  
 **Quero** visualizar todas as minhas contas cadastradas  
 **Para** ter uma visão geral dos meus recursos
 
 **Critérios de Aceite:**
+
 - [ ] Lista exibe: nome, tipo, saldo e cor de cada conta
 - [ ] Usuário vê apenas suas próprias contas
 - [ ] Opção para adicionar nova conta
@@ -940,11 +993,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Exibe mensagem quando não há contas cadastradas
 
 #### US-006: Criar Conta Bancária
+
 **Como** usuário autenticado  
 **Quero** cadastrar uma nova conta bancária  
 **Para** registrar meus recursos financeiros
 
 **Critérios de Aceite:**
+
 - [ ] Formulário solicita: nome, tipo de conta, saldo inicial e cor
 - [ ] Tipos disponíveis: Conta Corrente, Poupança, Investimento, Dinheiro, Outro
 - [ ] Saldo inicial pode ser zero ou positivo
@@ -952,22 +1007,26 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Mensagem de sucesso é exibida
 
 #### US-007: Editar Conta Bancária
+
 **Como** usuário autenticado  
 **Quero** alterar os dados de uma conta  
 **Para** manter as informações atualizadas
 
 **Critérios de Aceite:**
+
 - [ ] Formulário vem preenchido com dados atuais
 - [ ] Todos os campos podem ser alterados exceto o saldo (calculado)
 - [ ] Após salvar, retorna para lista de contas
 - [ ] Mensagem de sucesso é exibida
 
 #### US-008: Excluir Conta Bancária
+
 **Como** usuário autenticado  
 **Quero** remover uma conta do sistema  
 **Para** manter apenas contas relevantes
 
 **Critérios de Aceite:**
+
 - [ ] Confirmação é solicitada antes de excluir
 - [ ] Transações vinculadas são excluídas junto
 - [ ] Após excluir, retorna para lista de contas
@@ -978,11 +1037,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### 10.3 Épico 3: Gestão de Categorias
 
 #### US-009: Listar Categorias
+
 **Como** usuário autenticado  
 **Quero** visualizar todas as minhas categorias  
 **Para** gerenciar a organização das transações
 
 **Critérios de Aceite:**
+
 - [ ] Lista exibe: nome, tipo (receita/despesa), ícone e cor
 - [ ] Categorias são separadas por tipo
 - [ ] Usuário vê apenas suas próprias categorias
@@ -990,11 +1051,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Opções para editar e excluir cada categoria
 
 #### US-010: Criar Categoria
+
 **Como** usuário autenticado  
 **Quero** cadastrar uma nova categoria  
 **Para** organizar minhas transações
 
 **Critérios de Aceite:**
+
 - [ ] Formulário solicita: nome, tipo (receita/despesa), ícone e cor
 - [ ] Nome é obrigatório
 - [ ] Tipo é obrigatório
@@ -1002,22 +1065,26 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Mensagem de sucesso é exibida
 
 #### US-011: Editar Categoria
+
 **Como** usuário autenticado  
 **Quero** alterar os dados de uma categoria  
 **Para** manter as informações atualizadas
 
 **Critérios de Aceite:**
+
 - [ ] Formulário vem preenchido com dados atuais
 - [ ] Todos os campos podem ser alterados
 - [ ] Após salvar, retorna para lista de categorias
 - [ ] Mensagem de sucesso é exibida
 
 #### US-012: Excluir Categoria
+
 **Como** usuário autenticado  
 **Quero** remover uma categoria do sistema  
 **Para** manter apenas categorias relevantes
 
 **Critérios de Aceite:**
+
 - [ ] Confirmação é solicitada antes de excluir
 - [ ] Transações vinculadas mantêm categoria como null
 - [ ] Após excluir, retorna para lista de categorias
@@ -1028,11 +1095,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### 10.4 Épico 4: Gestão de Transações
 
 #### US-013: Listar Transações
+
 **Como** usuário autenticado  
 **Quero** visualizar todas as minhas transações  
 **Para** acompanhar minhas movimentações financeiras
 
 **Critérios de Aceite:**
+
 - [ ] Lista exibe: data, descrição, categoria, conta e valor
 - [ ] Valores de receita em verde, despesa em vermelho
 - [ ] Ordenação por data (mais recente primeiro)
@@ -1041,11 +1110,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Opções para editar e excluir cada transação
 
 #### US-014: Criar Transação
+
 **Como** usuário autenticado  
 **Quero** registrar uma nova transação  
 **Para** manter o controle das minhas finanças
 
 **Critérios de Aceite:**
+
 - [ ] Formulário solicita: tipo, conta, categoria, valor, data e descrição
 - [ ] Tipo: receita ou despesa
 - [ ] Conta é obrigatória (select com contas do usuário)
@@ -1057,11 +1128,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Após salvar, retorna para lista de transações
 
 #### US-015: Editar Transação
+
 **Como** usuário autenticado  
 **Quero** alterar os dados de uma transação  
 **Para** corrigir informações incorretas
 
 **Critérios de Aceite:**
+
 - [ ] Formulário vem preenchido com dados atuais
 - [ ] Todos os campos podem ser alterados
 - [ ] Saldo da conta é recalculado
@@ -1069,11 +1142,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 - [ ] Mensagem de sucesso é exibida
 
 #### US-016: Excluir Transação
+
 **Como** usuário autenticado  
 **Quero** remover uma transação do sistema  
 **Para** corrigir lançamentos incorretos
 
 **Critérios de Aceite:**
+
 - [ ] Confirmação é solicitada antes de excluir
 - [ ] Saldo da conta é recalculado
 - [ ] Após excluir, retorna para lista de transações
@@ -1084,11 +1159,13 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### 10.5 Épico 5: Dashboard
 
 #### US-017: Visualizar Dashboard
+
 **Como** usuário autenticado  
 **Quero** ver um resumo das minhas finanças  
 **Para** ter uma visão geral da minha situação financeira
 
 **Critérios de Aceite:**
+
 - [ ] Exibe saldo total (soma de todas as contas)
 - [ ] Exibe total de receitas do mês atual
 - [ ] Exibe total de despesas do mês atual
@@ -1165,6 +1242,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### Sprint 1: Configuração Inicial e Autenticação
 
 #### 1.1 Configuração do Projeto
+
 - [X] **1.1.1** Configurar settings.py
   - [X] 1.1.1.1 Adicionar apps ao INSTALLED_APPS (users, accounts, categories, transactions)
   - [X] 1.1.1.2 Configurar AUTH_USER_MODEL = 'users.User'
@@ -1190,6 +1268,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 1.1.3.6 Criar diretório static/js/
 
 #### 1.2 Model de Usuário Customizado
+
 - [ ] **1.2.1** Implementar model User
   - [ ] 1.2.1.1 Criar classe User herdando de AbstractUser em users/models.py
   - [ ] 1.2.1.2 Definir username = None
@@ -1211,6 +1290,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 1.2.3.3 Criar superusuário para testes
 
 #### 1.3 Template Base e Componentes
+
 - [ ] **1.3.1** Criar template base.html
   - [ ] 1.3.1.1 Definir estrutura HTML5 com doctype
   - [ ] 1.3.1.2 Configurar meta tags (viewport, charset)
@@ -1241,6 +1321,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 1.3.4.6 Criar components/alert.html
 
 #### 1.4 Landing Page
+
 - [ ] **1.4.1** Criar view da landing page
   - [ ] 1.4.1.1 Criar view landing_page em core/views.py ou criar app 'pages'
   - [ ] 1.4.1.2 Usar TemplateView ou função simples
@@ -1258,6 +1339,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 1.4.3.1 Adicionar rota '' para landing page em core/urls.py
 
 #### 1.5 Sistema de Autenticação
+
 - [ ] **1.5.1** Criar formulários de autenticação
   - [ ] 1.5.1.1 Criar users/forms.py
   - [ ] 1.5.1.2 Criar UserRegistrationForm com campos: first_name, last_name, email, password1, password2
@@ -1287,6 +1369,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### Sprint 2: Dashboard e Estrutura Base dos Módulos
 
 #### 2.1 Dashboard Básico
+
 - [ ] **2.1.1** Criar view do dashboard
   - [ ] 2.1.1.1 Criar views.py na app core ou criar app 'dashboard'
   - [ ] 2.1.1.2 Criar DashboardView (TemplateView)
@@ -1308,6 +1391,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 2.1.3.2 Configurar como LOGIN_REDIRECT_URL
 
 #### 2.2 Model de Contas Bancárias
+
 - [ ] **2.2.1** Implementar model Account
   - [ ] 2.2.1.1 Criar classe Account em accounts/models.py
   - [ ] 2.2.1.2 Definir ACCOUNT_TYPES choices
@@ -1318,7 +1402,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 2.2.1.7 Campo color (CharField, max_length=7, default='#06b6d4')
   - [ ] 2.2.1.8 Campo is_active (BooleanField, default=True)
   - [ ] 2.2.1.9 Campos created_at e updated_at
-  - [ ] 2.2.1.10 Método __str__ retornando nome da conta
+  - [ ] 2.2.1.10 Método **str** retornando nome da conta
   - [ ] 2.2.1.11 Meta class com ordering
 
 - [ ] **2.2.2** Configurar admin de Account
@@ -1332,6 +1416,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 2.2.3.2 Executar migrate
 
 #### 2.3 Model de Categorias
+
 - [ ] **2.3.1** Implementar model Category
   - [ ] 2.3.1.1 Criar classe Category em categories/models.py
   - [ ] 2.3.1.2 Definir CATEGORY_TYPES choices (income, expense)
@@ -1341,7 +1426,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 2.3.1.6 Campo icon (CharField, max_length=50, blank=True)
   - [ ] 2.3.1.7 Campo color (CharField, max_length=7, default='#06b6d4')
   - [ ] 2.3.1.8 Campos created_at e updated_at
-  - [ ] 2.3.1.9 Método __str__ retornando nome da categoria
+  - [ ] 2.3.1.9 Método **str** retornando nome da categoria
   - [ ] 2.3.1.10 Meta class com ordering e verbose_name_plural
 
 - [ ] **2.3.2** Configurar admin de Category
@@ -1355,6 +1440,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 2.3.3.2 Executar migrate
 
 #### 2.4 Model de Transações
+
 - [ ] **2.4.1** Implementar model Transaction
   - [ ] 2.4.1.1 Criar classe Transaction em transactions/models.py
   - [ ] 2.4.1.2 Definir TRANSACTION_TYPES choices (income, expense)
@@ -1366,7 +1452,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 2.4.1.8 Campo date (DateField)
   - [ ] 2.4.1.9 Campo description (CharField, max_length=255, blank=True)
   - [ ] 2.4.1.10 Campos created_at e updated_at
-  - [ ] 2.4.1.11 Método __str__ retornando descrição ou tipo + valor
+  - [ ] 2.4.1.11 Método **str** retornando descrição ou tipo + valor
   - [ ] 2.4.1.12 Meta class com ordering por data decrescente
 
 - [ ] **2.4.2** Configurar admin de Transaction
@@ -1385,6 +1471,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### Sprint 3: CRUD de Contas Bancárias
 
 #### 3.1 Formulário de Contas
+
 - [ ] **3.1.1** Criar formulário de Account
   - [ ] 3.1.1.1 Criar accounts/forms.py
   - [ ] 3.1.1.2 Criar AccountForm (ModelForm)
@@ -1394,6 +1481,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 3.1.1.6 Configurar help_texts se necessário
 
 #### 3.2 Views de Contas
+
 - [ ] **3.2.1** Criar view de listagem
   - [ ] 3.2.1.1 Criar AccountListView (ListView) em accounts/views.py
   - [ ] 3.2.1.2 Adicionar LoginRequiredMixin
@@ -1424,6 +1512,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 3.2.4.5 Adicionar mensagem de sucesso
 
 #### 3.3 Templates de Contas
+
 - [ ] **3.3.1** Criar template de listagem
   - [ ] 3.3.1.1 Criar templates/accounts/account_list.html
   - [ ] 3.3.1.2 Estender base_dashboard.html
@@ -1451,6 +1540,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 3.3.3.5 Botões Cancelar e Excluir
 
 #### 3.4 URLs de Contas
+
 - [ ] **3.4.1** Configurar URLs
   - [ ] 3.4.1.1 Criar accounts/urls.py
   - [ ] 3.4.1.2 Definir app_name = 'accounts'
@@ -1465,6 +1555,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### Sprint 4: CRUD de Categorias
 
 #### 4.1 Formulário de Categorias
+
 - [ ] **4.1.1** Criar formulário de Category
   - [ ] 4.1.1.1 Criar categories/forms.py
   - [ ] 4.1.1.2 Criar CategoryForm (ModelForm)
@@ -1474,6 +1565,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 4.1.1.6 Configurar choices para category_type
 
 #### 4.2 Views de Categorias
+
 - [ ] **4.2.1** Criar view de listagem
   - [ ] 4.2.1.1 Criar CategoryListView (ListView) em categories/views.py
   - [ ] 4.2.1.2 Adicionar LoginRequiredMixin
@@ -1504,6 +1596,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 4.2.4.5 Adicionar mensagem de sucesso
 
 #### 4.3 Templates de Categorias
+
 - [ ] **4.3.1** Criar template de listagem
   - [ ] 4.3.1.1 Criar templates/categories/category_list.html
   - [ ] 4.3.1.2 Estender base_dashboard.html
@@ -1528,6 +1621,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 4.3.3.3 Botões Cancelar e Excluir
 
 #### 4.4 URLs de Categorias
+
 - [ ] **4.4.1** Configurar URLs
   - [ ] 4.4.1.1 Criar categories/urls.py
   - [ ] 4.4.1.2 Definir app_name = 'categories'
@@ -1542,6 +1636,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### Sprint 5: CRUD de Transações
 
 #### 5.1 Formulário de Transações
+
 - [ ] **5.1.1** Criar formulário de Transaction
   - [ ] 5.1.1.1 Criar transactions/forms.py
   - [ ] 5.1.1.2 Criar TransactionForm (ModelForm)
@@ -1549,9 +1644,10 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 5.1.1.4 Configurar widgets com classes Tailwind
   - [ ] 5.1.1.5 Widget de date com type="date"
   - [ ] 5.1.1.6 Definir labels em português
-  - [ ] 5.1.1.7 Sobrescrever __init__ para filtrar contas e categorias do usuário
+  - [ ] 5.1.1.7 Sobrescrever **init** para filtrar contas e categorias do usuário
 
 #### 5.2 Views de Transações
+
 - [ ] **5.2.1** Criar view de listagem
   - [ ] 5.2.1.1 Criar TransactionListView (ListView) em transactions/views.py
   - [ ] 5.2.1.2 Adicionar LoginRequiredMixin
@@ -1588,6 +1684,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 5.2.4.6 Adicionar mensagem de sucesso
 
 #### 5.3 Lógica de Atualização de Saldo
+
 - [ ] **5.3.1** Implementar lógica de saldo
   - [ ] 5.3.1.1 Criar método ou signal para atualizar saldo ao criar transação
   - [ ] 5.3.1.2 Receita: saldo += amount
@@ -1596,6 +1693,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 5.3.1.5 Ao excluir: reverter valor da transação
 
 #### 5.4 Templates de Transações
+
 - [ ] **5.4.1** Criar template de listagem
   - [ ] 5.4.1.1 Criar templates/transactions/transaction_list.html
   - [ ] 5.4.1.2 Estender base_dashboard.html
@@ -1620,6 +1718,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 5.4.3.3 Botões Cancelar e Excluir
 
 #### 5.5 URLs de Transações
+
 - [ ] **5.5.1** Configurar URLs
   - [ ] 5.5.1.1 Criar transactions/urls.py
   - [ ] 5.5.1.2 Definir app_name = 'transactions'
@@ -1634,6 +1733,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### Sprint 6: Dashboard Completo e Refinamentos
 
 #### 6.1 Dashboard com Dados Reais
+
 - [ ] **6.1.1** Atualizar view do dashboard
   - [ ] 6.1.1.1 Calcular saldo total (soma de todas as contas do usuário)
   - [ ] 6.1.1.2 Calcular receitas do mês atual
@@ -1653,6 +1753,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 6.1.2.7 Links para ver mais transações/contas
 
 #### 6.2 Mensagens de Feedback
+
 - [ ] **6.2.1** Configurar sistema de mensagens
   - [ ] 6.2.1.1 Verificar MessageMiddleware no settings
   - [ ] 6.2.1.2 Adicionar messages framework context processor
@@ -1661,6 +1762,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 6.2.1.5 Adicionar mensagens em todas as views de CRUD
 
 #### 6.3 Navegação e Links
+
 - [ ] **6.3.1** Atualizar sidebar
   - [ ] 6.3.1.1 Adicionar link para Dashboard
   - [ ] 6.3.1.2 Adicionar link para Contas
@@ -1675,6 +1777,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 6.3.2.3 Botão de logout no mobile
 
 #### 6.4 Refinamentos de UI
+
 - [ ] **6.4.1** Melhorias visuais
   - [ ] 6.4.1.1 Adicionar ícones nos botões
   - [ ] 6.4.1.2 Adicionar ícones na sidebar
@@ -1693,6 +1796,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
 ### Sprint 7: Testes e Documentação (Final)
 
 #### 7.1 Testes Unitários
+
 - [ ] **7.1.1** Testes de Models
   - [ ] 7.1.1.1 Testes para User model
   - [ ] 7.1.1.2 Testes para Account model
@@ -1713,6 +1817,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 7.1.3.4 Testes de TransactionForm
 
 #### 7.2 Documentação
+
 - [ ] **7.2.1** README.md
   - [ ] 7.2.1.1 Descrição do projeto
   - [ ] 7.2.1.2 Requisitos de sistema
@@ -1727,6 +1832,7 @@ O sistema utiliza uma paleta baseada em **Cyan** e **Emerald** sobre fundo escur
   - [ ] 7.2.2.3 Documentar funções utilitárias
 
 #### 7.3 Preparação para Deploy (Opcional)
+
 - [ ] **7.3.1** Configurações de produção
   - [ ] 7.3.1.1 Separar settings de dev e prod
   - [ ] 7.3.1.2 Configurar variáveis de ambiente
