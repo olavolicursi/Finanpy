@@ -83,21 +83,21 @@
 
 #### 1.4 Landing Page
 
-- [ ] **1.4.1** Criar view da landing page
-  - [ ] 1.4.1.1 Criar view landing_page em core/views.py ou criar app 'pages'
-  - [ ] 1.4.1.2 Usar TemplateView ou função simples
-  - [ ] 1.4.1.3 Redirecionar para dashboard se usuário autenticado
+- [X] **1.4.1** Criar view da landing page
+  - [X] 1.4.1.1 Criar view landing_page em core/views.py ou criar app 'pages'
+  - [X] 1.4.1.2 Usar TemplateView ou função simples
+  - [X] 1.4.1.3 Redirecionar para dashboard se usuário autenticado
 
-- [ ] **1.4.2** Criar template da landing page
-  - [ ] 1.4.2.1 Criar templates/public/landing.html
-  - [ ] 1.4.2.2 Seção hero com título e subtítulo
-  - [ ] 1.4.2.3 Gradiente de fundo cyan/emerald
-  - [ ] 1.4.2.4 Botões "Cadastre-se" e "Entrar"
-  - [ ] 1.4.2.5 Seção de features/benefícios
-  - [ ] 1.4.2.6 Design responsivo
+- [X] **1.4.2** Criar template da landing page
+  - [X] 1.4.2.1 Criar templates/public/landing.html
+  - [X] 1.4.2.2 Seção hero com título e subtítulo
+  - [X] 1.4.2.3 Gradiente de fundo cyan/emerald
+  - [X] 1.4.2.4 Botões "Cadastre-se" e "Entrar"
+  - [X] 1.4.2.5 Seção de features/benefícios
+  - [X] 1.4.2.6 Design responsivo
 
-- [ ] **1.4.3** Configurar URL da landing page
-  - [ ] 1.4.3.1 Adicionar rota '' para landing page em core/urls.py
+- [X] **1.4.3** Configurar URL da landing page
+  - [X] 1.4.3.1 Adicionar rota '' para landing page em core/urls.py
 
 #### 1.5 Sistema de Autenticação
 
