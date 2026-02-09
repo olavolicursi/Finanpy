@@ -153,28 +153,28 @@
 
 #### 2.2 Model de Contas Bancárias
 
-- [ ] **2.2.1** Implementar model Account
-  - [ ] 2.2.1.1 Criar classe Account em accounts/models.py
-  - [ ] 2.2.1.2 Definir ACCOUNT_TYPES choices
-  - [ ] 2.2.1.3 Campo user (ForeignKey para User)
-  - [ ] 2.2.1.4 Campo name (CharField, max_length=100)
-  - [ ] 2.2.1.5 Campo account_type (CharField com choices)
-  - [ ] 2.2.1.6 Campo balance (DecimalField, max_digits=12, decimal_places=2)
-  - [ ] 2.2.1.7 Campo color (CharField, max_length=7, default='#06b6d4')
-  - [ ] 2.2.1.8 Campo is_active (BooleanField, default=True)
-  - [ ] 2.2.1.9 Campos created_at e updated_at
-  - [ ] 2.2.1.10 Método **str** retornando nome da conta
-  - [ ] 2.2.1.11 Meta class com ordering
+- [X] **2.2.1** Implementar model Account
+  - [X] 2.2.1.1 Criar classe Account em accounts/models.py
+  - [X] 2.2.1.2 Definir ACCOUNT_TYPES choices
+  - [X] 2.2.1.3 Campo user (ForeignKey para User)
+  - [X] 2.2.1.4 Campo name (CharField, max_length=100)
+  - [X] 2.2.1.5 Campo account_type (CharField com choices)
+  - [X] 2.2.1.6 Campo balance (DecimalField, max_digits=12, decimal_places=2)
+  - [X] 2.2.1.7 Campo color (CharField, max_length=7, default='#06b6d4')
+  - [X] 2.2.1.8 Campo is_active (BooleanField, default=True)
+  - [X] 2.2.1.9 Campos created_at e updated_at
+  - [X] 2.2.1.10 Método **str** retornando nome da conta
+  - [X] 2.2.1.11 Meta class com ordering
 
-- [ ] **2.2.2** Configurar admin de Account
-  - [ ] 2.2.2.1 Criar AccountAdmin em accounts/admin.py
-  - [ ] 2.2.2.2 Configurar list_display
-  - [ ] 2.2.2.3 Configurar list_filter por tipo e usuário
-  - [ ] 2.2.2.4 Registrar Account no admin
+- [X] **2.2.2** Configurar admin de Account
+  - [X] 2.2.2.1 Criar AccountAdmin em accounts/admin.py
+  - [X] 2.2.2.2 Configurar list_display
+  - [X] 2.2.2.3 Configurar list_filter por tipo e usuário
+  - [X] 2.2.2.4 Registrar Account no admin
 
-- [ ] **2.2.3** Criar e aplicar migrações
-  - [ ] 2.2.3.1 Executar makemigrations accounts
-  - [ ] 2.2.3.2 Executar migrate
+- [X] **2.2.3** Criar e aplicar migrações
+  - [X] 2.2.3.1 Executar makemigrations accounts
+  - [X] 2.2.3.2 Executar migrate
 
 #### 2.3 Model de Categorias
 
