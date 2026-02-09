@@ -233,83 +233,83 @@
 
 #### 3.1 Formulário de Contas
 
-- [ ] **3.1.1** Criar formulário de Account
-  - [ ] 3.1.1.1 Criar accounts/forms.py
-  - [ ] 3.1.1.2 Criar AccountForm (ModelForm)
-  - [ ] 3.1.1.3 Definir fields: name, account_type, balance, color
-  - [ ] 3.1.1.4 Configurar widgets com classes Tailwind
-  - [ ] 3.1.1.5 Definir labels em português
-  - [ ] 3.1.1.6 Configurar help_texts se necessário
+- [X] **3.1.1** Criar formulário de Account
+  - [X] 3.1.1.1 Criar accounts/forms.py
+  - [X] 3.1.1.2 Criar AccountForm (ModelForm)
+  - [X] 3.1.1.3 Definir fields: name, account_type, balance, color
+  - [X] 3.1.1.4 Configurar widgets com classes Tailwind
+  - [X] 3.1.1.5 Definir labels em português
+  - [X] 3.1.1.6 Configurar help_texts se necessário
 
 #### 3.2 Views de Contas
 
-- [ ] **3.2.1** Criar view de listagem
-  - [ ] 3.2.1.1 Criar AccountListView (ListView) em accounts/views.py
-  - [ ] 3.2.1.2 Adicionar LoginRequiredMixin
-  - [ ] 3.2.1.3 Filtrar queryset por request.user
-  - [ ] 3.2.1.4 Ordenar por nome
+- [X] **3.2.1** Criar view de listagem
+  - [X] 3.2.1.1 Criar AccountListView (ListView) em accounts/views.py
+  - [X] 3.2.1.2 Adicionar LoginRequiredMixin
+  - [X] 3.2.1.3 Filtrar queryset por request.user
+  - [X] 3.2.1.4 Ordenar por nome
 
-- [ ] **3.2.2** Criar view de criação
-  - [ ] 3.2.2.1 Criar AccountCreateView (CreateView)
-  - [ ] 3.2.2.2 Adicionar LoginRequiredMixin
-  - [ ] 3.2.2.3 Usar AccountForm
-  - [ ] 3.2.2.4 Sobrescrever form_valid para associar user
-  - [ ] 3.2.2.5 Configurar success_url para lista de contas
-  - [ ] 3.2.2.6 Adicionar mensagem de sucesso
+- [X] **3.2.2** Criar view de criação
+  - [X] 3.2.2.1 Criar AccountCreateView (CreateView)
+  - [X] 3.2.2.2 Adicionar LoginRequiredMixin
+  - [X] 3.2.2.3 Usar AccountForm
+  - [X] 3.2.2.4 Sobrescrever form_valid para associar user
+  - [X] 3.2.2.5 Configurar success_url para lista de contas
+  - [X] 3.2.2.6 Adicionar mensagem de sucesso
 
-- [ ] **3.2.3** Criar view de edição
-  - [ ] 3.2.3.1 Criar AccountUpdateView (UpdateView)
-  - [ ] 3.2.3.2 Adicionar LoginRequiredMixin
-  - [ ] 3.2.3.3 Filtrar queryset por request.user
-  - [ ] 3.2.3.4 Usar AccountForm
-  - [ ] 3.2.3.5 Configurar success_url
-  - [ ] 3.2.3.6 Adicionar mensagem de sucesso
+- [X] **3.2.3** Criar view de edição
+  - [X] 3.2.3.1 Criar AccountUpdateView (UpdateView)
+  - [X] 3.2.3.2 Adicionar LoginRequiredMixin
+  - [X] 3.2.3.3 Filtrar queryset por request.user
+  - [X] 3.2.3.4 Usar AccountForm
+  - [X] 3.2.3.5 Configurar success_url
+  - [X] 3.2.3.6 Adicionar mensagem de sucesso
 
-- [ ] **3.2.4** Criar view de exclusão
-  - [ ] 3.2.4.1 Criar AccountDeleteView (DeleteView)
-  - [ ] 3.2.4.2 Adicionar LoginRequiredMixin
-  - [ ] 3.2.4.3 Filtrar queryset por request.user
-  - [ ] 3.2.4.4 Configurar success_url
-  - [ ] 3.2.4.5 Adicionar mensagem de sucesso
+- [X] **3.2.4** Criar view de exclusão
+  - [X] 3.2.4.1 Criar AccountDeleteView (DeleteView)
+  - [X] 3.2.4.2 Adicionar LoginRequiredMixin
+  - [X] 3.2.4.3 Filtrar queryset por request.user
+  - [X] 3.2.4.4 Configurar success_url
+  - [X] 3.2.4.5 Adicionar mensagem de sucesso
 
 #### 3.3 Templates de Contas
 
-- [ ] **3.3.1** Criar template de listagem
-  - [ ] 3.3.1.1 Criar templates/accounts/account_list.html
-  - [ ] 3.3.1.2 Estender base_dashboard.html
-  - [ ] 3.3.1.3 Título da página "Contas"
-  - [ ] 3.3.1.4 Botão "Nova Conta"
-  - [ ] 3.3.1.5 Grid ou lista de cards de contas
-  - [ ] 3.3.1.6 Exibir nome, tipo, saldo e cor de cada conta
-  - [ ] 3.3.1.7 Botões de editar e excluir em cada card
-  - [ ] 3.3.1.8 Mensagem quando não há contas
-  - [ ] 3.3.1.9 Exibir mensagens de feedback
+- [X] **3.3.1** Criar template de listagem
+  - [X] 3.3.1.1 Criar templates/accounts/account_list.html
+  - [X] 3.3.1.2 Estender base_dashboard.html
+  - [X] 3.3.1.3 Título da página "Contas"
+  - [X] 3.3.1.4 Botão "Nova Conta"
+  - [X] 3.3.1.5 Grid ou lista de cards de contas
+  - [X] 3.3.1.6 Exibir nome, tipo, saldo e cor de cada conta
+  - [X] 3.3.1.7 Botões de editar e excluir em cada card
+  - [X] 3.3.1.8 Mensagem quando não há contas
+  - [X] 3.3.1.9 Exibir mensagens de feedback
 
-- [ ] **3.3.2** Criar template de criação/edição
-  - [ ] 3.3.2.1 Criar templates/accounts/account_form.html
-  - [ ] 3.3.2.2 Estender base_dashboard.html
-  - [ ] 3.3.2.3 Título dinâmico (Nova/Editar Conta)
-  - [ ] 3.3.2.4 Formulário estilizado com design system
-  - [ ] 3.3.2.5 Botões Cancelar e Salvar
-  - [ ] 3.3.2.6 Exibição de erros de validação
+- [X] **3.3.2** Criar template de criação/edição
+  - [X] 3.3.2.1 Criar templates/accounts/account_form.html
+  - [X] 3.3.2.2 Estender base_dashboard.html
+  - [X] 3.3.2.3 Título dinâmico (Nova/Editar Conta)
+  - [X] 3.3.2.4 Formulário estilizado com design system
+  - [X] 3.3.2.5 Botões Cancelar e Salvar
+  - [X] 3.3.2.6 Exibição de erros de validação
 
-- [ ] **3.3.3** Criar template de confirmação de exclusão
-  - [ ] 3.3.3.1 Criar templates/accounts/account_confirm_delete.html
-  - [ ] 3.3.3.2 Estender base_dashboard.html
-  - [ ] 3.3.3.3 Mensagem de confirmação
-  - [ ] 3.3.3.4 Exibir nome da conta a ser excluída
-  - [ ] 3.3.3.5 Botões Cancelar e Excluir
+- [X] **3.3.3** Criar template de confirmação de exclusão
+  - [X] 3.3.3.1 Criar templates/accounts/account_confirm_delete.html
+  - [X] 3.3.3.2 Estender base_dashboard.html
+  - [X] 3.3.3.3 Mensagem de confirmação
+  - [X] 3.3.3.4 Exibir nome da conta a ser excluída
+  - [X] 3.3.3.5 Botões Cancelar e Excluir
 
 #### 3.4 URLs de Contas
 
-- [ ] **3.4.1** Configurar URLs
-  - [ ] 3.4.1.1 Criar accounts/urls.py
-  - [ ] 3.4.1.2 Definir app_name = 'accounts'
-  - [ ] 3.4.1.3 Rota '' para AccountListView (name='list')
-  - [ ] 3.4.1.4 Rota 'create/' para AccountCreateView (name='create')
-  - [ ] 3.4.1.5 Rota '<int:pk>/edit/' para AccountUpdateView (name='edit')
-  - [ ] 3.4.1.6 Rota '<int:pk>/delete/' para AccountDeleteView (name='delete')
-  - [ ] 3.4.1.7 Incluir accounts.urls em core/urls.py com prefix 'accounts/'
+- [X] **3.4.1** Configurar URLs
+  - [X] 3.4.1.1 Criar accounts/urls.py
+  - [X] 3.4.1.2 Definir app_name = 'accounts'
+  - [X] 3.4.1.3 Rota '' para AccountListView (name='list')
+  - [X] 3.4.1.4 Rota 'create/' para AccountCreateView (name='create')
+  - [X] 3.4.1.5 Rota '<int:pk>/edit/' para AccountUpdateView (name='edit')
+  - [X] 3.4.1.6 Rota '<int:pk>/delete/' para AccountDeleteView (name='delete')
+  - [X] 3.4.1.7 Incluir accounts.urls em core/urls.py com prefix 'accounts/'
 
 ---
 

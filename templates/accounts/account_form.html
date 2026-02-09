@@ -1,0 +1,57 @@
+{% extends 'base_dashboard.html' %}
+
+{% block title %}{% if object %}Editar Conta{% else %}Nova Conta{% endif %} - Finanpy{% endblock %}
+
+{% block page_title %}{% if object %}Editar Conta{% else %}Nova Conta{% endif %}{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <!-- Header -->
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-100">
+            {% if object %}Editar Conta{% else %}Nova Conta{% endif %}
+        </h2>
+        <p class="text-sm text-gray-500 mt-1">
+            {% if object %}
+                Atualize as informações da conta "{{ object.name }}".
+            {% else %}
+                Preencha os dados para cadastrar uma nova conta.
+            {% endif %}
+        </p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <div class="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
+                {% for error in form.non_field_errors %}
+                <p class="text-sm text-red-400">{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% for field in form %}
+                {% include 'components/form_field.html' with field=field %}
+            {% endfor %}
+
+            <!-- Action Buttons -->
+            <div class="flex items-center justify-end space-x-3 mt-6 pt-6 border-t border-gray-800">
+                <a href="{% url 'accounts:list' %}"
+                   class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950 bg-gray-700 hover:bg-gray-600 text-gray-100 focus:ring-gray-500">
+                    Cancelar
+                </a>
+                <button type="submit"
+                        class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950 bg-cyan-500 hover:bg-cyan-600 text-white focus:ring-cyan-500">
+                    <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                    </svg>
+                    {% if object %}Salvar Alterações{% else %}Criar Conta{% endif %}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
