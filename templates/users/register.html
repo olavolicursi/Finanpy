@@ -1,0 +1,76 @@
+{% extends 'base_public.html' %}
+
+{% block title %}Cadastro - Finanpy{% endblock %}
+
+{% block content %}
+<section class="flex items-center justify-center min-h-[calc(100vh-10rem)] py-12 px-4">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative w-full max-w-md">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <a href="{% url 'landing' %}" class="inline-block text-3xl font-bold mb-4">
+                <span class="text-cyan-500">Finan</span><span class="text-emerald-500">py</span>
+            </a>
+            <h1 class="text-2xl font-bold text-gray-100 mb-2">Crie sua conta</h1>
+            <p class="text-gray-400">Comece a controlar suas finanças hoje</p>
+        </div>
+
+        <!-- Alerts -->
+        {% include 'components/alert.html' %}
+
+        <!-- Registration Form -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 sm:p-8">
+            <form method="post" novalidate>
+                {% csrf_token %}
+
+                <!-- Non-field errors -->
+                {% if form.non_field_errors %}
+                <div class="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
+                    {% for error in form.non_field_errors %}
+                    <p class="text-sm text-red-400">{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Name Fields (side by side) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        {% include 'components/form_field.html' with field=form.first_name %}
+                    </div>
+                    <div>
+                        {% include 'components/form_field.html' with field=form.last_name %}
+                    </div>
+                </div>
+
+                <!-- Email -->
+                {% include 'components/form_field.html' with field=form.email %}
+
+                <!-- Password -->
+                {% include 'components/form_field.html' with field=form.password1 %}
+
+                <!-- Password Confirmation -->
+                {% include 'components/form_field.html' with field=form.password2 %}
+
+                <!-- Submit Button -->
+                <button type="submit"
+                        class="w-full mt-2 px-4 py-2.5 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                    Criar Conta
+                </button>
+            </form>
+        </div>
+
+        <!-- Login Link -->
+        <p class="text-center text-sm text-gray-400 mt-6">
+            Já tem uma conta?
+            <a href="{% url 'users:login' %}" class="text-cyan-500 hover:text-cyan-400 font-medium transition-colors">
+                Faça login
+            </a>
+        </p>
+    </div>
+</section>
+{% endblock %}

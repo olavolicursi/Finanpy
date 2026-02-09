@@ -1,17 +1,16 @@
 """
 URL configuration for the users app.
 
-Placeholder patterns - will be fully implemented in Task 1.5.
+Provides routes for user registration, login and logout.
 """
 from django.urls import path
-from django.views.generic import TemplateView
+
+from users.views import CustomLoginView, CustomLogoutView, RegisterView
 
 app_name = 'users'
 
-# Placeholder URL patterns for navbar compatibility.
-# These will be replaced with real authentication views in Task 1.5.
 urlpatterns = [
-    path('login/', TemplateView.as_view(template_name='base.html'), name='login'),
-    path('register/', TemplateView.as_view(template_name='base.html'), name='register'),
-    path('logout/', TemplateView.as_view(template_name='base.html'), name='logout'),
+    path('register/', RegisterView.as_view(), name='register'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
 ]

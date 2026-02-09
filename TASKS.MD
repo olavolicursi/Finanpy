@@ -101,29 +101,29 @@
 
 #### 1.5 Sistema de Autenticação
 
-- [ ] **1.5.1** Criar formulários de autenticação
-  - [ ] 1.5.1.1 Criar users/forms.py
-  - [ ] 1.5.1.2 Criar UserRegistrationForm com campos: first_name, last_name, email, password1, password2
-  - [ ] 1.5.1.3 Criar UserLoginForm (AuthenticationForm customizado para email)
-  - [ ] 1.5.1.4 Estilizar campos com classes Tailwind
+- [X] **1.5.1** Criar formulários de autenticação
+  - [X] 1.5.1.1 Criar users/forms.py
+  - [X] 1.5.1.2 Criar UserRegistrationForm com campos: first_name, last_name, email, password1, password2
+  - [X] 1.5.1.3 Criar UserLoginForm (AuthenticationForm customizado para email)
+  - [X] 1.5.1.4 Estilizar campos com classes Tailwind
 
-- [ ] **1.5.2** Criar views de autenticação
-  - [ ] 1.5.2.1 Criar RegisterView (CreateView) em users/views.py
-  - [ ] 1.5.2.2 Criar LoginView customizada para usar email
-  - [ ] 1.5.2.3 Configurar LogoutView
-  - [ ] 1.5.2.4 Configurar redirecionamentos após login/logout
+- [X] **1.5.2** Criar views de autenticação
+  - [X] 1.5.2.1 Criar RegisterView (CreateView) em users/views.py
+  - [X] 1.5.2.2 Criar LoginView customizada para usar email
+  - [X] 1.5.2.3 Configurar LogoutView
+  - [X] 1.5.2.4 Configurar redirecionamentos após login/logout
 
-- [ ] **1.5.3** Criar templates de autenticação
-  - [ ] 1.5.3.1 Criar templates/users/register.html
-  - [ ] 1.5.3.2 Criar templates/users/login.html
-  - [ ] 1.5.3.3 Estilizar formulários com design system
-  - [ ] 1.5.3.4 Adicionar validação visual de erros
-  - [ ] 1.5.3.5 Adicionar links entre login e registro
+- [X] **1.5.3** Criar templates de autenticação
+  - [X] 1.5.3.1 Criar templates/users/register.html
+  - [X] 1.5.3.2 Criar templates/users/login.html
+  - [X] 1.5.3.3 Estilizar formulários com design system
+  - [X] 1.5.3.4 Adicionar validação visual de erros
+  - [X] 1.5.3.5 Adicionar links entre login e registro
 
-- [ ] **1.5.4** Configurar URLs de autenticação
-  - [ ] 1.5.4.1 Criar users/urls.py
-  - [ ] 1.5.4.2 Adicionar rotas: register/, login/, logout/
-  - [ ] 1.5.4.3 Incluir users.urls em core/urls.py
+- [X] **1.5.4** Configurar URLs de autenticação
+  - [X] 1.5.4.1 Criar users/urls.py
+  - [X] 1.5.4.2 Adicionar rotas: register/, login/, logout/
+  - [X] 1.5.4.3 Incluir users.urls em core/urls.py
 
 ---
 
