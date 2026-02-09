@@ -30,25 +30,25 @@
 
 #### 1.2 Model de Usuário Customizado
 
-- [ ] **1.2.1** Implementar model User
-  - [ ] 1.2.1.1 Criar classe User herdando de AbstractUser em users/models.py
-  - [ ] 1.2.1.2 Definir username = None
-  - [ ] 1.2.1.3 Definir email como campo único e obrigatório
-  - [ ] 1.2.1.4 Definir USERNAME_FIELD = 'email'
-  - [ ] 1.2.1.5 Definir REQUIRED_FIELDS = []
-  - [ ] 1.2.1.6 Adicionar campos created_at e updated_at
-  - [ ] 1.2.1.7 Criar UserManager customizado para criar usuários por email
+- [X] **1.2.1** Implementar model User
+  - [X] 1.2.1.1 Criar classe User herdando de AbstractUser em users/models.py
+  - [X] 1.2.1.2 Definir username = None
+  - [X] 1.2.1.3 Definir email como campo único e obrigatório
+  - [X] 1.2.1.4 Definir USERNAME_FIELD = 'email'
+  - [X] 1.2.1.5 Definir REQUIRED_FIELDS = []
+  - [X] 1.2.1.6 Adicionar campos created_at e updated_at
+  - [X] 1.2.1.7 Criar UserManager customizado para criar usuários por email
 
-- [ ] **1.2.2** Configurar admin do User
-  - [ ] 1.2.2.1 Criar classe UserAdmin em users/admin.py
-  - [ ] 1.2.2.2 Configurar list_display com campos relevantes
-  - [ ] 1.2.2.3 Configurar search_fields para busca por email
-  - [ ] 1.2.2.4 Registrar User no admin
+- [X] **1.2.2** Configurar admin do User
+  - [X] 1.2.2.1 Criar classe UserAdmin em users/admin.py
+  - [X] 1.2.2.2 Configurar list_display com campos relevantes
+  - [X] 1.2.2.3 Configurar search_fields para busca por email
+  - [X] 1.2.2.4 Registrar User no admin
 
-- [ ] **1.2.3** Criar e aplicar migrações
-  - [ ] 1.2.3.1 Executar makemigrations users
-  - [ ] 1.2.3.2 Executar migrate
-  - [ ] 1.2.3.3 Criar superusuário para testes
+- [X] **1.2.3** Criar e aplicar migrações
+  - [X] 1.2.3.1 Executar makemigrations users
+  - [X] 1.2.3.2 Executar migrate
+  - [X] 1.2.3.3 Criar superusuário para testes
 
 #### 1.3 Template Base e Componentes
 
