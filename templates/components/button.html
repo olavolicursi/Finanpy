@@ -1,0 +1,44 @@
+{% comment %}
+Button Component - Reusable styled button.
+
+Usage:
+  {% include 'components/button.html' with text="Salvar" variant="primary" %}
+  {% include 'components/button.html' with text="Cancelar" variant="secondary" href="/accounts/" %}
+  {% include 'components/button.html' with text="Excluir" variant="danger" type="submit" %}
+
+Variables:
+  - text: Button label (required)
+  - variant: "primary" | "secondary" | "danger" (default: "primary")
+  - type: "submit" | "button" | "reset" (default: "button")
+  - href: If provided, renders as an <a> tag instead of <button>
+  - extra_class: Additional CSS classes
+  - icon: Optional SVG icon HTML
+{% endcomment %}
+
+{% if href %}
+<a href="{{ href }}"
+   class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950
+          {% if variant == 'danger' %}
+              bg-red-500 hover:bg-red-600 text-white focus:ring-red-500
+          {% elif variant == 'secondary' %}
+              bg-gray-700 hover:bg-gray-600 text-gray-100 focus:ring-gray-500
+          {% else %}
+              bg-cyan-500 hover:bg-cyan-600 text-white focus:ring-cyan-500
+          {% endif %}
+          {{ extra_class|default:'' }}">
+    {{ text }}
+</a>
+{% else %}
+<button type="{{ type|default:'button' }}"
+        class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950
+               {% if variant == 'danger' %}
+                   bg-red-500 hover:bg-red-600 text-white focus:ring-red-500
+               {% elif variant == 'secondary' %}
+                   bg-gray-700 hover:bg-gray-600 text-gray-100 focus:ring-gray-500
+               {% else %}
+                   bg-cyan-500 hover:bg-cyan-600 text-white focus:ring-cyan-500
+               {% endif %}
+               {{ extra_class|default:'' }}">
+    {{ text }}
+</button>
+{% endif %}

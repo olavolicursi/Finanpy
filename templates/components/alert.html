@@ -1,0 +1,85 @@
+{% comment %}
+Alert Component - Displays Django messages as styled alerts.
+
+Usage (for Django messages framework):
+  {% include 'components/alert.html' %}
+
+Or for a single custom alert:
+  {% include 'components/alert.html' with alert_type="success" alert_message="Operação realizada!" %}
+
+Variables (custom mode):
+  - alert_type: "success" | "error" | "warning" | "info"
+  - alert_message: The message text
+{% endcomment %}
+
+{% if messages %}
+<div class="space-y-3 mb-6">
+    {% for message in messages %}
+    <div class="flex items-center p-4 rounded-lg border
+                {% if message.tags == 'success' %}
+                    bg-emerald-500/10 border-emerald-500/30 text-emerald-400
+                {% elif message.tags == 'error' %}
+                    bg-red-500/10 border-red-500/30 text-red-400
+                {% elif message.tags == 'warning' %}
+                    bg-yellow-500/10 border-yellow-500/30 text-yellow-400
+                {% else %}
+                    bg-cyan-500/10 border-cyan-500/30 text-cyan-400
+                {% endif %}"
+         role="alert">
+        <!-- Icon -->
+        <div class="flex-shrink-0 mr-3">
+            {% if message.tags == 'success' %}
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            {% elif message.tags == 'error' %}
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+            {% elif message.tags == 'warning' %}
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+            </svg>
+            {% else %}
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            {% endif %}
+        </div>
+        <!-- Message -->
+        <p class="text-sm font-medium flex-1">{{ message }}</p>
+        <!-- Close Button -->
+        <button type="button" onclick="this.parentElement.remove()"
+                class="ml-3 flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity"
+                aria-label="Fechar">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if alert_message %}
+<div class="flex items-center p-4 rounded-lg border mb-6
+            {% if alert_type == 'success' %}
+                bg-emerald-500/10 border-emerald-500/30 text-emerald-400
+            {% elif alert_type == 'error' %}
+                bg-red-500/10 border-red-500/30 text-red-400
+            {% elif alert_type == 'warning' %}
+                bg-yellow-500/10 border-yellow-500/30 text-yellow-400
+            {% else %}
+                bg-cyan-500/10 border-cyan-500/30 text-cyan-400
+            {% endif %}"
+     role="alert">
+    <p class="text-sm font-medium flex-1">{{ alert_message }}</p>
+    <button type="button" onclick="this.parentElement.remove()"
+            class="ml-3 flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity"
+            aria-label="Fechar">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+    </button>
+</div>
+{% endif %}

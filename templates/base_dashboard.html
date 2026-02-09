@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <!-- Sidebar -->
+    {% include 'components/sidebar.html' %}
+
+    <!-- Main Content Area -->
+    <div class="md:ml-64 min-h-screen">
+        <!-- Top Bar (mobile) -->
+        <header class="bg-gray-900 border-b border-gray-800 h-16 flex items-center justify-between px-4 md:px-8">
+            <!-- Spacer for mobile toggle button -->
+            <div class="w-10 md:hidden"></div>
+
+            <!-- Page Title -->
+            <h1 class="text-lg font-semibold text-gray-100">
+                {% block page_title %}Dashboard{% endblock %}
+            </h1>
+
+            <!-- User Info (desktop) -->
+            <div class="hidden md:flex items-center space-x-3">
+                <span class="text-sm text-gray-400">{{ user.get_full_name|default:user.email }}</span>
+                <div class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
+                    <span class="text-cyan-400 text-sm font-semibold">
+                        {{ user.first_name|first|default:user.email|first|upper }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Empty spacer for centering on mobile -->
+            <div class="w-10 md:hidden"></div>
+        </header>
+
+        <!-- Page Content -->
+        <main class="p-4 md:p-8">
+            <!-- Feedback Messages -->
+            {% include 'components/alert.html' %}
+
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+{% endblock %}

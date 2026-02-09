@@ -1,0 +1,31 @@
+{% comment %}
+Card Component - Reusable card container.
+
+Usage:
+  {% include 'components/card.html' with title="Card Title" %}
+  
+  Or with custom content block via wrapping:
+  <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+      <!-- Your content here -->
+  </div>
+
+Variables:
+  - title: Optional card title
+  - subtitle: Optional subtitle text
+  - extra_class: Additional CSS classes
+{% endcomment %}
+
+<div class="bg-gray-900 border border-gray-800 rounded-xl p-6 {{ extra_class|default:'' }}">
+    {% if title %}
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold text-gray-100">{{ title }}</h3>
+        {% if subtitle %}
+        <p class="text-sm text-gray-500 mt-1">{{ subtitle }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+    {% if content %}
+    <div>{{ content }}</div>
+    {% endif %}
+</div>

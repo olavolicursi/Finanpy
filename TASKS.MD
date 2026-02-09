@@ -52,34 +52,34 @@
 
 #### 1.3 Template Base e Componentes
 
-- [ ] **1.3.1** Criar template base.html
-  - [ ] 1.3.1.1 Definir estrutura HTML5 com doctype
-  - [ ] 1.3.1.2 Configurar meta tags (viewport, charset)
-  - [ ] 1.3.1.3 Incluir link para output.css do Tailwind
-  - [ ] 1.3.1.4 Definir fundo escuro (bg-gray-950)
-  - [ ] 1.3.1.5 Criar bloco {% block content %}
-  - [ ] 1.3.1.6 Criar bloco {% block title %}
-  - [ ] 1.3.1.7 Criar bloco {% block extra_css %}
-  - [ ] 1.3.1.8 Criar bloco {% block extra_js %}
+- [X] **1.3.1** Criar template base.html
+  - [X] 1.3.1.1 Definir estrutura HTML5 com doctype
+  - [X] 1.3.1.2 Configurar meta tags (viewport, charset)
+  - [X] 1.3.1.3 Incluir link para output.css do Tailwind
+  - [X] 1.3.1.4 Definir fundo escuro (bg-gray-950)
+  - [X] 1.3.1.5 Criar bloco {% block content %}
+  - [X] 1.3.1.6 Criar bloco {% block title %}
+  - [X] 1.3.1.7 Criar bloco {% block extra_css %}
+  - [X] 1.3.1.8 Criar bloco {% block extra_js %}
 
-- [ ] **1.3.2** Criar template base_public.html
-  - [ ] 1.3.2.1 Estender base.html
-  - [ ] 1.3.2.2 Layout para páginas públicas (landing, login, registro)
-  - [ ] 1.3.2.3 Navbar simples com logo e links
+- [X] **1.3.2** Criar template base_public.html
+  - [X] 1.3.2.1 Estender base.html
+  - [X] 1.3.2.2 Layout para páginas públicas (landing, login, registro)
+  - [X] 1.3.2.3 Navbar simples com logo e links
 
-- [ ] **1.3.3** Criar template base_dashboard.html
-  - [ ] 1.3.3.1 Estender base.html
-  - [ ] 1.3.3.2 Incluir sidebar com navegação
-  - [ ] 1.3.3.3 Área de conteúdo principal
-  - [ ] 1.3.3.4 Bloco para mensagens de feedback
+- [X] **1.3.3** Criar template base_dashboard.html
+  - [X] 1.3.3.1 Estender base.html
+  - [X] 1.3.3.2 Incluir sidebar com navegação
+  - [X] 1.3.3.3 Área de conteúdo principal
+  - [X] 1.3.3.4 Bloco para mensagens de feedback
 
-- [ ] **1.3.4** Criar componentes reutilizáveis
-  - [ ] 1.3.4.1 Criar components/navbar.html
-  - [ ] 1.3.4.2 Criar components/sidebar.html
-  - [ ] 1.3.4.3 Criar components/card.html
-  - [ ] 1.3.4.4 Criar components/form_field.html
-  - [ ] 1.3.4.5 Criar components/button.html
-  - [ ] 1.3.4.6 Criar components/alert.html
+- [X] **1.3.4** Criar componentes reutilizáveis
+  - [X] 1.3.4.1 Criar components/navbar.html
+  - [X] 1.3.4.2 Criar components/sidebar.html
+  - [X] 1.3.4.3 Criar components/card.html
+  - [X] 1.3.4.4 Criar components/form_field.html
+  - [X] 1.3.4.5 Criar components/button.html
+  - [X] 1.3.4.6 Criar components/alert.html
 
 #### 1.4 Landing Page
 

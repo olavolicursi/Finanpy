@@ -1,0 +1,86 @@
+{% load static %}
+<!-- Navbar -->
+<nav class="bg-gray-900 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="{% url 'landing' %}" class="text-2xl font-bold">
+                    <span class="text-cyan-500">Finan</span><span class="text-emerald-500">py</span>
+                </a>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-4">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}"
+                       class="text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Dashboard
+                    </a>
+                    <form method="post" action="{% url 'users:logout' %}">
+                        {% csrf_token %}
+                        <button type="submit"
+                                class="text-gray-400 hover:text-red-400 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                            Sair
+                        </button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'users:login' %}"
+                       class="text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Entrar
+                    </a>
+                    <a href="{% url 'users:register' %}"
+                       class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Cadastre-se
+                    </a>
+                {% endif %}
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button type="button" id="mobile-menu-btn"
+                        class="text-gray-400 hover:text-gray-100 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        aria-label="Abrir menu">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800">
+        <div class="px-4 py-3 space-y-2">
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}"
+                   class="block text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Dashboard
+                </a>
+                <form method="post" action="{% url 'users:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit"
+                            class="block w-full text-left text-gray-400 hover:text-red-400 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Sair
+                    </button>
+                </form>
+            {% else %}
+                <a href="{% url 'users:login' %}"
+                   class="block text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Entrar
+                </a>
+                <a href="{% url 'users:register' %}"
+                   class="block text-center bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Cadastre-se
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
