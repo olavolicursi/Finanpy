@@ -317,80 +317,80 @@
 
 #### 4.1 Formulário de Categorias
 
-- [ ] **4.1.1** Criar formulário de Category
-  - [ ] 4.1.1.1 Criar categories/forms.py
-  - [ ] 4.1.1.2 Criar CategoryForm (ModelForm)
-  - [ ] 4.1.1.3 Definir fields: name, category_type, icon, color
-  - [ ] 4.1.1.4 Configurar widgets com classes Tailwind
-  - [ ] 4.1.1.5 Definir labels em português
-  - [ ] 4.1.1.6 Configurar choices para category_type
+- [X] **4.1.1** Criar formulário de Category
+  - [X] 4.1.1.1 Criar categories/forms.py
+  - [X] 4.1.1.2 Criar CategoryForm (ModelForm)
+  - [X] 4.1.1.3 Definir fields: name, category_type, icon, color
+  - [X] 4.1.1.4 Configurar widgets com classes Tailwind
+  - [X] 4.1.1.5 Definir labels em português
+  - [X] 4.1.1.6 Configurar choices para category_type
 
 #### 4.2 Views de Categorias
 
-- [ ] **4.2.1** Criar view de listagem
-  - [ ] 4.2.1.1 Criar CategoryListView (ListView) em categories/views.py
-  - [ ] 4.2.1.2 Adicionar LoginRequiredMixin
-  - [ ] 4.2.1.3 Filtrar queryset por request.user
-  - [ ] 4.2.1.4 Ordenar por tipo e nome
+- [X] **4.2.1** Criar view de listagem
+  - [X] 4.2.1.1 Criar CategoryListView (ListView) em categories/views.py
+  - [X] 4.2.1.2 Adicionar LoginRequiredMixin
+  - [X] 4.2.1.3 Filtrar queryset por request.user
+  - [X] 4.2.1.4 Ordenar por tipo e nome
 
-- [ ] **4.2.2** Criar view de criação
-  - [ ] 4.2.2.1 Criar CategoryCreateView (CreateView)
-  - [ ] 4.2.2.2 Adicionar LoginRequiredMixin
-  - [ ] 4.2.2.3 Usar CategoryForm
-  - [ ] 4.2.2.4 Sobrescrever form_valid para associar user
-  - [ ] 4.2.2.5 Configurar success_url
-  - [ ] 4.2.2.6 Adicionar mensagem de sucesso
+- [X] **4.2.2** Criar view de criação
+  - [X] 4.2.2.1 Criar CategoryCreateView (CreateView)
+  - [X] 4.2.2.2 Adicionar LoginRequiredMixin
+  - [X] 4.2.2.3 Usar CategoryForm
+  - [X] 4.2.2.4 Sobrescrever form_valid para associar user
+  - [X] 4.2.2.5 Configurar success_url
+  - [X] 4.2.2.6 Adicionar mensagem de sucesso
 
-- [ ] **4.2.3** Criar view de edição
-  - [ ] 4.2.3.1 Criar CategoryUpdateView (UpdateView)
-  - [ ] 4.2.3.2 Adicionar LoginRequiredMixin
-  - [ ] 4.2.3.3 Filtrar queryset por request.user
-  - [ ] 4.2.3.4 Usar CategoryForm
-  - [ ] 4.2.3.5 Configurar success_url
-  - [ ] 4.2.3.6 Adicionar mensagem de sucesso
+- [X] **4.2.3** Criar view de edição
+  - [X] 4.2.3.1 Criar CategoryUpdateView (UpdateView)
+  - [X] 4.2.3.2 Adicionar LoginRequiredMixin
+  - [X] 4.2.3.3 Filtrar queryset por request.user
+  - [X] 4.2.3.4 Usar CategoryForm
+  - [X] 4.2.3.5 Configurar success_url
+  - [X] 4.2.3.6 Adicionar mensagem de sucesso
 
-- [ ] **4.2.4** Criar view de exclusão
-  - [ ] 4.2.4.1 Criar CategoryDeleteView (DeleteView)
-  - [ ] 4.2.4.2 Adicionar LoginRequiredMixin
-  - [ ] 4.2.4.3 Filtrar queryset por request.user
-  - [ ] 4.2.4.4 Configurar success_url
-  - [ ] 4.2.4.5 Adicionar mensagem de sucesso
+- [X] **4.2.4** Criar view de exclusão
+  - [X] 4.2.4.1 Criar CategoryDeleteView (DeleteView)
+  - [X] 4.2.4.2 Adicionar LoginRequiredMixin
+  - [X] 4.2.4.3 Filtrar queryset por request.user
+  - [X] 4.2.4.4 Configurar success_url
+  - [X] 4.2.4.5 Adicionar mensagem de sucesso
 
 #### 4.3 Templates de Categorias
 
-- [ ] **4.3.1** Criar template de listagem
-  - [ ] 4.3.1.1 Criar templates/categories/category_list.html
-  - [ ] 4.3.1.2 Estender base_dashboard.html
-  - [ ] 4.3.1.3 Título "Categorias"
-  - [ ] 4.3.1.4 Botão "Nova Categoria"
-  - [ ] 4.3.1.5 Separar categorias por tipo (Receitas/Despesas)
-  - [ ] 4.3.1.6 Grid de cards de categorias
-  - [ ] 4.3.1.7 Exibir nome, tipo, ícone e cor
-  - [ ] 4.3.1.8 Botões de editar e excluir
-  - [ ] 4.3.1.9 Mensagem quando não há categorias
+- [X] **4.3.1** Criar template de listagem
+  - [X] 4.3.1.1 Criar templates/categories/category_list.html
+  - [X] 4.3.1.2 Estender base_dashboard.html
+  - [X] 4.3.1.3 Título "Categorias"
+  - [X] 4.3.1.4 Botão "Nova Categoria"
+  - [X] 4.3.1.5 Separar categorias por tipo (Receitas/Despesas)
+  - [X] 4.3.1.6 Grid de cards de categorias
+  - [X] 4.3.1.7 Exibir nome, tipo, ícone e cor
+  - [X] 4.3.1.8 Botões de editar e excluir
+  - [X] 4.3.1.9 Mensagem quando não há categorias
 
-- [ ] **4.3.2** Criar template de criação/edição
-  - [ ] 4.3.2.1 Criar templates/categories/category_form.html
-  - [ ] 4.3.2.2 Estender base_dashboard.html
-  - [ ] 4.3.2.3 Título dinâmico
-  - [ ] 4.3.2.4 Formulário estilizado
-  - [ ] 4.3.2.5 Botões Cancelar e Salvar
+- [X] **4.3.2** Criar template de criação/edição
+  - [X] 4.3.2.1 Criar templates/categories/category_form.html
+  - [X] 4.3.2.2 Estender base_dashboard.html
+  - [X] 4.3.2.3 Título dinâmico
+  - [X] 4.3.2.4 Formulário estilizado
+  - [X] 4.3.2.5 Botões Cancelar e Salvar
 
-- [ ] **4.3.3** Criar template de confirmação de exclusão
-  - [ ] 4.3.3.1 Criar templates/categories/category_confirm_delete.html
-  - [ ] 4.3.3.2 Mensagem de confirmação
-  - [ ] 4.3.3.3 Botões Cancelar e Excluir
+- [X] **4.3.3** Criar template de confirmação de exclusão
+  - [X] 4.3.3.1 Criar templates/categories/category_confirm_delete.html
+  - [X] 4.3.3.2 Mensagem de confirmação
+  - [X] 4.3.3.3 Botões Cancelar e Excluir
 
 #### 4.4 URLs de Categorias
 
-- [ ] **4.4.1** Configurar URLs
-  - [ ] 4.4.1.1 Criar categories/urls.py
-  - [ ] 4.4.1.2 Definir app_name = 'categories'
-  - [ ] 4.4.1.3 Rota '' para CategoryListView (name='list')
-  - [ ] 4.4.1.4 Rota 'create/' para CategoryCreateView (name='create')
-  - [ ] 4.4.1.5 Rota '<int:pk>/edit/' para CategoryUpdateView (name='edit')
-  - [ ] 4.4.1.6 Rota '<int:pk>/delete/' para CategoryDeleteView (name='delete')
-  - [ ] 4.4.1.7 Incluir categories.urls em core/urls.py
+- [X] **4.4.1** Configurar URLs
+  - [X] 4.4.1.1 Criar categories/urls.py
+  - [X] 4.4.1.2 Definir app_name = 'categories'
+  - [X] 4.4.1.3 Rota '' para CategoryListView (name='list')
+  - [X] 4.4.1.4 Rota 'create/' para CategoryCreateView (name='create')
+  - [X] 4.4.1.5 Rota '<int:pk>/edit/' para CategoryUpdateView (name='edit')
+  - [X] 4.4.1.6 Rota '<int:pk>/delete/' para CategoryDeleteView (name='delete')
+  - [X] 4.4.1.7 Incluir categories.urls em core/urls.py
 
 ---
 

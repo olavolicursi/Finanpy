@@ -1,14 +1,26 @@
 """
 URL configuration for the categories app.
 
-Placeholder patterns - will be fully implemented in Sprint 4.
+Provides routes for the full CRUD of transaction categories:
+- list: Display all categories for the logged-in user.
+- create: Form to create a new category.
+- edit: Form to update an existing category.
+- delete: Confirmation page to delete a category.
 """
 from django.urls import path
-from django.views.generic import TemplateView
+
+from categories.views import (
+    CategoryCreateView,
+    CategoryDeleteView,
+    CategoryListView,
+    CategoryUpdateView,
+)
 
 app_name = 'categories'
 
-# Placeholder URL patterns for sidebar navigation compatibility.
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='base.html'), name='list'),
+    path('', CategoryListView.as_view(), name='list'),
+    path('create/', CategoryCreateView.as_view(), name='create'),
+    path('<int:pk>/edit/', CategoryUpdateView.as_view(), name='edit'),
+    path('<int:pk>/delete/', CategoryDeleteView.as_view(), name='delete'),
 ]
