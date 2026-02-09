@@ -178,54 +178,54 @@
 
 #### 2.3 Model de Categorias
 
-- [ ] **2.3.1** Implementar model Category
-  - [ ] 2.3.1.1 Criar classe Category em categories/models.py
-  - [ ] 2.3.1.2 Definir CATEGORY_TYPES choices (income, expense)
-  - [ ] 2.3.1.3 Campo user (ForeignKey para User)
-  - [ ] 2.3.1.4 Campo name (CharField, max_length=100)
-  - [ ] 2.3.1.5 Campo category_type (CharField com choices)
-  - [ ] 2.3.1.6 Campo icon (CharField, max_length=50, blank=True)
-  - [ ] 2.3.1.7 Campo color (CharField, max_length=7, default='#06b6d4')
-  - [ ] 2.3.1.8 Campos created_at e updated_at
-  - [ ] 2.3.1.9 Método **str** retornando nome da categoria
-  - [ ] 2.3.1.10 Meta class com ordering e verbose_name_plural
+- [X] **2.3.1** Implementar model Category
+  - [X] 2.3.1.1 Criar classe Category em categories/models.py
+  - [X] 2.3.1.2 Definir CATEGORY_TYPES choices (income, expense)
+  - [X] 2.3.1.3 Campo user (ForeignKey para User)
+  - [X] 2.3.1.4 Campo name (CharField, max_length=100)
+  - [X] 2.3.1.5 Campo category_type (CharField com choices)
+  - [X] 2.3.1.6 Campo icon (CharField, max_length=50, blank=True)
+  - [X] 2.3.1.7 Campo color (CharField, max_length=7, default='#06b6d4')
+  - [X] 2.3.1.8 Campos created_at e updated_at
+  - [X] 2.3.1.9 Método **str** retornando nome da categoria
+  - [X] 2.3.1.10 Meta class com ordering e verbose_name_plural
 
-- [ ] **2.3.2** Configurar admin de Category
-  - [ ] 2.3.2.1 Criar CategoryAdmin em categories/admin.py
-  - [ ] 2.3.2.2 Configurar list_display
-  - [ ] 2.3.2.3 Configurar list_filter por tipo
-  - [ ] 2.3.2.4 Registrar Category no admin
+- [X] **2.3.2** Configurar admin de Category
+  - [X] 2.3.2.1 Criar CategoryAdmin em categories/admin.py
+  - [X] 2.3.2.2 Configurar list_display
+  - [X] 2.3.2.3 Configurar list_filter por tipo
+  - [X] 2.3.2.4 Registrar Category no admin
 
-- [ ] **2.3.3** Criar e aplicar migrações
-  - [ ] 2.3.3.1 Executar makemigrations categories
-  - [ ] 2.3.3.2 Executar migrate
+- [X] **2.3.3** Criar e aplicar migrações
+  - [X] 2.3.3.1 Executar makemigrations categories
+  - [X] 2.3.3.2 Executar migrate
 
 #### 2.4 Model de Transações
 
-- [ ] **2.4.1** Implementar model Transaction
-  - [ ] 2.4.1.1 Criar classe Transaction em transactions/models.py
-  - [ ] 2.4.1.2 Definir TRANSACTION_TYPES choices (income, expense)
-  - [ ] 2.4.1.3 Campo user (ForeignKey para User)
-  - [ ] 2.4.1.4 Campo account (ForeignKey para Account, on_delete=CASCADE)
-  - [ ] 2.4.1.5 Campo category (ForeignKey para Category, on_delete=SET_NULL, null=True)
-  - [ ] 2.4.1.6 Campo transaction_type (CharField com choices)
-  - [ ] 2.4.1.7 Campo amount (DecimalField, max_digits=12, decimal_places=2)
-  - [ ] 2.4.1.8 Campo date (DateField)
-  - [ ] 2.4.1.9 Campo description (CharField, max_length=255, blank=True)
-  - [ ] 2.4.1.10 Campos created_at e updated_at
-  - [ ] 2.4.1.11 Método **str** retornando descrição ou tipo + valor
-  - [ ] 2.4.1.12 Meta class com ordering por data decrescente
+- [X] **2.4.1** Implementar model Transaction
+  - [X] 2.4.1.1 Criar classe Transaction em transactions/models.py
+  - [X] 2.4.1.2 Definir TRANSACTION_TYPES choices (income, expense)
+  - [X] 2.4.1.3 Campo user (ForeignKey para User)
+  - [X] 2.4.1.4 Campo account (ForeignKey para Account, on_delete=CASCADE)
+  - [X] 2.4.1.5 Campo category (ForeignKey para Category, on_delete=SET_NULL, null=True)
+  - [X] 2.4.1.6 Campo transaction_type (CharField com choices)
+  - [X] 2.4.1.7 Campo amount (DecimalField, max_digits=12, decimal_places=2)
+  - [X] 2.4.1.8 Campo date (DateField)
+  - [X] 2.4.1.9 Campo description (CharField, max_length=255, blank=True)
+  - [X] 2.4.1.10 Campos created_at e updated_at
+  - [X] 2.4.1.11 Método **str** retornando descrição ou tipo + valor
+  - [X] 2.4.1.12 Meta class com ordering por data decrescente
 
-- [ ] **2.4.2** Configurar admin de Transaction
-  - [ ] 2.4.2.1 Criar TransactionAdmin em transactions/admin.py
-  - [ ] 2.4.2.2 Configurar list_display
-  - [ ] 2.4.2.3 Configurar list_filter por tipo, conta e categoria
-  - [ ] 2.4.2.4 Configurar date_hierarchy
-  - [ ] 2.4.2.5 Registrar Transaction no admin
+- [X] **2.4.2** Configurar admin de Transaction
+  - [X] 2.4.2.1 Criar TransactionAdmin em transactions/admin.py
+  - [X] 2.4.2.2 Configurar list_display
+  - [X] 2.4.2.3 Configurar list_filter por tipo, conta e categoria
+  - [X] 2.4.2.4 Configurar date_hierarchy
+  - [X] 2.4.2.5 Registrar Transaction no admin
 
-- [ ] **2.4.3** Criar e aplicar migrações
-  - [ ] 2.4.3.1 Executar makemigrations transactions
-  - [ ] 2.4.3.2 Executar migrate
+- [X] **2.4.3** Criar e aplicar migrações
+  - [X] 2.4.3.1 Executar makemigrations transactions
+  - [X] 2.4.3.2 Executar migrate
 
 ---
 
