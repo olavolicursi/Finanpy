@@ -2,10 +2,11 @@
 Core views for the Finanpy project.
 
 Contains public-facing views like the landing page and
-placeholder views for features not yet implemented.
+the main dashboard view for authenticated users.
 """
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
+from django.views.generic import TemplateView
 
 
 def landing_page(request):
@@ -20,12 +21,29 @@ def landing_page(request):
     return render(request, 'public/landing.html')
 
 
-@login_required
-def dashboard_placeholder(request):
+class DashboardView(LoginRequiredMixin, TemplateView):
     """
-    Placeholder dashboard view.
+    Main dashboard view.
 
-    Will be replaced with the real DashboardView in Sprint 2 (Task 2.1).
-    For now, renders a simple placeholder page.
+    Displays the financial overview for the authenticated user,
+    including total balance, monthly income/expenses, recent
+    transactions, and account balances.
+
+    Context data will be populated with real values in Sprint 6 (Task 6.1).
+    For now, placeholder values are provided.
     """
-    return render(request, 'dashboard/placeholder.html')
+
+    template_name = 'dashboard/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Placeholder context — will be populated with real data in Sprint 6
+        context.update({
+            'total_balance': 0,
+            'monthly_income': 0,
+            'monthly_expenses': 0,
+            'monthly_balance': 0,
+            'recent_transactions': [],
+            'accounts': [],
+        })
+        return context

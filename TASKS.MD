@@ -131,25 +131,25 @@
 
 #### 2.1 Dashboard Básico
 
-- [ ] **2.1.1** Criar view do dashboard
-  - [ ] 2.1.1.1 Criar views.py na app core ou criar app 'dashboard'
-  - [ ] 2.1.1.2 Criar DashboardView (TemplateView)
-  - [ ] 2.1.1.3 Adicionar LoginRequiredMixin
-  - [ ] 2.1.1.4 Preparar contexto inicial vazio (será populado depois)
+- [X] **2.1.1** Criar view do dashboard
+  - [X] 2.1.1.1 Criar views.py na app core ou criar app 'dashboard'
+  - [X] 2.1.1.2 Criar DashboardView (TemplateView)
+  - [X] 2.1.1.3 Adicionar LoginRequiredMixin
+  - [X] 2.1.1.4 Preparar contexto inicial vazio (será populado depois)
 
-- [ ] **2.1.2** Criar template do dashboard
-  - [ ] 2.1.2.1 Criar templates/dashboard/index.html
-  - [ ] 2.1.2.2 Estender base_dashboard.html
-  - [ ] 2.1.2.3 Criar grid de cards para estatísticas
-  - [ ] 2.1.2.4 Card de saldo total (placeholder)
-  - [ ] 2.1.2.5 Card de receitas do mês (placeholder)
-  - [ ] 2.1.2.6 Card de despesas do mês (placeholder)
-  - [ ] 2.1.2.7 Área para últimas transações (placeholder)
-  - [ ] 2.1.2.8 Área para saldos por conta (placeholder)
+- [X] **2.1.2** Criar template do dashboard
+  - [X] 2.1.2.1 Criar templates/dashboard/index.html
+  - [X] 2.1.2.2 Estender base_dashboard.html
+  - [X] 2.1.2.3 Criar grid de cards para estatísticas
+  - [X] 2.1.2.4 Card de saldo total (placeholder)
+  - [X] 2.1.2.5 Card de receitas do mês (placeholder)
+  - [X] 2.1.2.6 Card de despesas do mês (placeholder)
+  - [X] 2.1.2.7 Área para últimas transações (placeholder)
+  - [X] 2.1.2.8 Área para saldos por conta (placeholder)
 
-- [ ] **2.1.3** Configurar URL do dashboard
-  - [ ] 2.1.3.1 Adicionar rota 'dashboard/' em core/urls.py
-  - [ ] 2.1.3.2 Configurar como LOGIN_REDIRECT_URL
+- [X] **2.1.3** Configurar URL do dashboard
+  - [X] 2.1.3.1 Adicionar rota 'dashboard/' em core/urls.py
+  - [X] 2.1.3.2 Configurar como LOGIN_REDIRECT_URL
 
 #### 2.2 Model de Contas Bancárias
 

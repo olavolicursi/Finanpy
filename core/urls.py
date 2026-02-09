@@ -7,11 +7,11 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 from django.contrib import admin
 from django.urls import include, path
 
-from core.views import dashboard_placeholder, landing_page
+from core.views import DashboardView, landing_page
 
 urlpatterns = [
     path('', landing_page, name='landing'),
-    path('dashboard/', dashboard_placeholder, name='dashboard'),
+    path('dashboard/', DashboardView.as_view(), name='dashboard'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('accounts/', include('accounts.urls')),
