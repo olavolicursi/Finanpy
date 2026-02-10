@@ -398,96 +398,96 @@
 
 #### 5.1 Formulário de Transações
 
-- [ ] **5.1.1** Criar formulário de Transaction
-  - [ ] 5.1.1.1 Criar transactions/forms.py
-  - [ ] 5.1.1.2 Criar TransactionForm (ModelForm)
-  - [ ] 5.1.1.3 Definir fields: transaction_type, account, category, amount, date, description
-  - [ ] 5.1.1.4 Configurar widgets com classes Tailwind
-  - [ ] 5.1.1.5 Widget de date com type="date"
-  - [ ] 5.1.1.6 Definir labels em português
-  - [ ] 5.1.1.7 Sobrescrever **init** para filtrar contas e categorias do usuário
+- [X] **5.1.1** Criar formulário de Transaction
+  - [X] 5.1.1.1 Criar transactions/forms.py
+  - [X] 5.1.1.2 Criar TransactionForm (ModelForm)
+  - [X] 5.1.1.3 Definir fields: transaction_type, account, category, amount, date, description
+  - [X] 5.1.1.4 Configurar widgets com classes Tailwind
+  - [X] 5.1.1.5 Widget de date com type="date"
+  - [X] 5.1.1.6 Definir labels em português
+  - [X] 5.1.1.7 Sobrescrever **init** para filtrar contas e categorias do usuário
 
 #### 5.2 Views de Transações
 
-- [ ] **5.2.1** Criar view de listagem
-  - [ ] 5.2.1.1 Criar TransactionListView (ListView) em transactions/views.py
-  - [ ] 5.2.1.2 Adicionar LoginRequiredMixin
-  - [ ] 5.2.1.3 Filtrar queryset por request.user
-  - [ ] 5.2.1.4 Ordenar por data decrescente
-  - [ ] 5.2.1.5 Usar select_related para account e category
-  - [ ] 5.2.1.6 Paginar resultados (opcional)
+- [X] **5.2.1** Criar view de listagem
+  - [X] 5.2.1.1 Criar TransactionListView (ListView) em transactions/views.py
+  - [X] 5.2.1.2 Adicionar LoginRequiredMixin
+  - [X] 5.2.1.3 Filtrar queryset por request.user
+  - [X] 5.2.1.4 Ordenar por data decrescente
+  - [X] 5.2.1.5 Usar select_related para account e category
+  - [X] 5.2.1.6 Paginar resultados (opcional)
 
-- [ ] **5.2.2** Criar view de criação
-  - [ ] 5.2.2.1 Criar TransactionCreateView (CreateView)
-  - [ ] 5.2.2.2 Adicionar LoginRequiredMixin
-  - [ ] 5.2.2.3 Usar TransactionForm
-  - [ ] 5.2.2.4 Sobrescrever get_form para passar user
-  - [ ] 5.2.2.5 Sobrescrever form_valid para associar user
-  - [ ] 5.2.2.6 Atualizar saldo da conta no form_valid
-  - [ ] 5.2.2.7 Configurar success_url
-  - [ ] 5.2.2.8 Adicionar mensagem de sucesso
+- [X] **5.2.2** Criar view de criação
+  - [X] 5.2.2.1 Criar TransactionCreateView (CreateView)
+  - [X] 5.2.2.2 Adicionar LoginRequiredMixin
+  - [X] 5.2.2.3 Usar TransactionForm
+  - [X] 5.2.2.4 Sobrescrever get_form para passar user
+  - [X] 5.2.2.5 Sobrescrever form_valid para associar user
+  - [X] 5.2.2.6 Atualizar saldo da conta no form_valid
+  - [X] 5.2.2.7 Configurar success_url
+  - [X] 5.2.2.8 Adicionar mensagem de sucesso
 
-- [ ] **5.2.3** Criar view de edição
-  - [ ] 5.2.3.1 Criar TransactionUpdateView (UpdateView)
-  - [ ] 5.2.3.2 Adicionar LoginRequiredMixin
-  - [ ] 5.2.3.3 Filtrar queryset por request.user
-  - [ ] 5.2.3.4 Sobrescrever get_form para passar user
-  - [ ] 5.2.3.5 Recalcular saldo da conta no form_valid
-  - [ ] 5.2.3.6 Configurar success_url
-  - [ ] 5.2.3.7 Adicionar mensagem de sucesso
+- [X] **5.2.3** Criar view de edição
+  - [X] 5.2.3.1 Criar TransactionUpdateView (UpdateView)
+  - [X] 5.2.3.2 Adicionar LoginRequiredMixin
+  - [X] 5.2.3.3 Filtrar queryset por request.user
+  - [X] 5.2.3.4 Sobrescrever get_form para passar user
+  - [X] 5.2.3.5 Recalcular saldo da conta no form_valid
+  - [X] 5.2.3.6 Configurar success_url
+  - [X] 5.2.3.7 Adicionar mensagem de sucesso
 
-- [ ] **5.2.4** Criar view de exclusão
-  - [ ] 5.2.4.1 Criar TransactionDeleteView (DeleteView)
-  - [ ] 5.2.4.2 Adicionar LoginRequiredMixin
-  - [ ] 5.2.4.3 Filtrar queryset por request.user
-  - [ ] 5.2.4.4 Reverter saldo da conta no delete
-  - [ ] 5.2.4.5 Configurar success_url
-  - [ ] 5.2.4.6 Adicionar mensagem de sucesso
+- [X] **5.2.4** Criar view de exclusão
+  - [X] 5.2.4.1 Criar TransactionDeleteView (DeleteView)
+  - [X] 5.2.4.2 Adicionar LoginRequiredMixin
+  - [X] 5.2.4.3 Filtrar queryset por request.user
+  - [X] 5.2.4.4 Reverter saldo da conta no delete
+  - [X] 5.2.4.5 Configurar success_url
+  - [X] 5.2.4.6 Adicionar mensagem de sucesso
 
 #### 5.3 Lógica de Atualização de Saldo
 
-- [ ] **5.3.1** Implementar lógica de saldo
-  - [ ] 5.3.1.1 Criar método ou signal para atualizar saldo ao criar transação
-  - [ ] 5.3.1.2 Receita: saldo += amount
-  - [ ] 5.3.1.3 Despesa: saldo -= amount
-  - [ ] 5.3.1.4 Ao editar: reverter valor antigo, aplicar novo
-  - [ ] 5.3.1.5 Ao excluir: reverter valor da transação
+- [X] **5.3.1** Implementar lógica de saldo
+  - [X] 5.3.1.1 Criar método ou signal para atualizar saldo ao criar transação
+  - [X] 5.3.1.2 Receita: saldo += amount
+  - [X] 5.3.1.3 Despesa: saldo -= amount
+  - [X] 5.3.1.4 Ao editar: reverter valor antigo, aplicar novo
+  - [X] 5.3.1.5 Ao excluir: reverter valor da transação
 
 #### 5.4 Templates de Transações
 
-- [ ] **5.4.1** Criar template de listagem
-  - [ ] 5.4.1.1 Criar templates/transactions/transaction_list.html
-  - [ ] 5.4.1.2 Estender base_dashboard.html
-  - [ ] 5.4.1.3 Título "Transações"
-  - [ ] 5.4.1.4 Botão "Nova Transação"
-  - [ ] 5.4.1.5 Tabela de transações
-  - [ ] 5.4.1.6 Colunas: Data, Descrição, Categoria, Conta, Valor, Ações
-  - [ ] 5.4.1.7 Valor verde para receita, vermelho para despesa
-  - [ ] 5.4.1.8 Botões de editar e excluir
-  - [ ] 5.4.1.9 Mensagem quando não há transações
+- [X] **5.4.1** Criar template de listagem
+  - [X] 5.4.1.1 Criar templates/transactions/transaction_list.html
+  - [X] 5.4.1.2 Estender base_dashboard.html
+  - [X] 5.4.1.3 Título "Transações"
+  - [X] 5.4.1.4 Botão "Nova Transação"
+  - [X] 5.4.1.5 Tabela de transações
+  - [X] 5.4.1.6 Colunas: Data, Descrição, Categoria, Conta, Valor, Ações
+  - [X] 5.4.1.7 Valor verde para receita, vermelho para despesa
+  - [X] 5.4.1.8 Botões de editar e excluir
+  - [X] 5.4.1.9 Mensagem quando não há transações
 
-- [ ] **5.4.2** Criar template de criação/edição
-  - [ ] 5.4.2.1 Criar templates/transactions/transaction_form.html
-  - [ ] 5.4.2.2 Estender base_dashboard.html
-  - [ ] 5.4.2.3 Título dinâmico
-  - [ ] 5.4.2.4 Formulário estilizado
-  - [ ] 5.4.2.5 Botões Cancelar e Salvar
+- [X] **5.4.2** Criar template de criação/edição
+  - [X] 5.4.2.1 Criar templates/transactions/transaction_form.html
+  - [X] 5.4.2.2 Estender base_dashboard.html
+  - [X] 5.4.2.3 Título dinâmico
+  - [X] 5.4.2.4 Formulário estilizado
+  - [X] 5.4.2.5 Botões Cancelar e Salvar
 
-- [ ] **5.4.3** Criar template de confirmação de exclusão
-  - [ ] 5.4.3.1 Criar templates/transactions/transaction_confirm_delete.html
-  - [ ] 5.4.3.2 Mensagem de confirmação com detalhes da transação
-  - [ ] 5.4.3.3 Botões Cancelar e Excluir
+- [X] **5.4.3** Criar template de confirmação de exclusão
+  - [X] 5.4.3.1 Criar templates/transactions/transaction_confirm_delete.html
+  - [X] 5.4.3.2 Mensagem de confirmação com detalhes da transação
+  - [X] 5.4.3.3 Botões Cancelar e Excluir
 
 #### 5.5 URLs de Transações
 
-- [ ] **5.5.1** Configurar URLs
-  - [ ] 5.5.1.1 Criar transactions/urls.py
-  - [ ] 5.5.1.2 Definir app_name = 'transactions'
-  - [ ] 5.5.1.3 Rota '' para TransactionListView (name='list')
-  - [ ] 5.5.1.4 Rota 'create/' para TransactionCreateView (name='create')
-  - [ ] 5.5.1.5 Rota '<int:pk>/edit/' para TransactionUpdateView (name='edit')
-  - [ ] 5.5.1.6 Rota '<int:pk>/delete/' para TransactionDeleteView (name='delete')
-  - [ ] 5.5.1.7 Incluir transactions.urls em core/urls.py
+- [X] **5.5.1** Configurar URLs
+  - [X] 5.5.1.1 Criar transactions/urls.py
+  - [X] 5.5.1.2 Definir app_name = 'transactions'
+  - [X] 5.5.1.3 Rota '' para TransactionListView (name='list')
+  - [X] 5.5.1.4 Rota 'create/' para TransactionCreateView (name='create')
+  - [X] 5.5.1.5 Rota '<int:pk>/edit/' para TransactionUpdateView (name='edit')
+  - [X] 5.5.1.6 Rota '<int:pk>/delete/' para TransactionDeleteView (name='delete')
+  - [X] 5.5.1.7 Incluir transactions.urls em core/urls.py
 
 ---
 

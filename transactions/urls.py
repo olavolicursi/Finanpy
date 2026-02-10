@@ -1,14 +1,20 @@
 """
 URL configuration for the transactions app.
-
-Placeholder patterns - will be fully implemented in Sprint 5.
 """
 from django.urls import path
-from django.views.generic import TemplateView
+
+from transactions.views import (
+    TransactionCreateView,
+    TransactionDeleteView,
+    TransactionListView,
+    TransactionUpdateView,
+)
 
 app_name = 'transactions'
 
-# Placeholder URL patterns for sidebar navigation compatibility.
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='base.html'), name='list'),
+    path('', TransactionListView.as_view(), name='list'),
+    path('create/', TransactionCreateView.as_view(), name='create'),
+    path('<int:pk>/edit/', TransactionUpdateView.as_view(), name='edit'),
+    path('<int:pk>/delete/', TransactionDeleteView.as_view(), name='delete'),
 ]
