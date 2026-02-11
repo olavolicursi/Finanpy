@@ -134,3 +134,13 @@ LOGOUT_REDIRECT_URL = 'users:login'
 
 # Custom User Model
 AUTH_USER_MODEL = 'users.User'
+
+# Messages framework: map level to tag for alert component (success, error, warning, info)
+from django.contrib.messages import constants as message_constants
+MESSAGE_TAGS = {
+    message_constants.DEBUG: 'debug',
+    message_constants.INFO: 'info',
+    message_constants.SUCCESS: 'success',
+    message_constants.WARNING: 'warning',
+    message_constants.ERROR: 'error',
+}

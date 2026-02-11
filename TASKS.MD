@@ -495,62 +495,62 @@
 
 #### 6.1 Dashboard com Dados Reais
 
-- [ ] **6.1.1** Atualizar view do dashboard
-  - [ ] 6.1.1.1 Calcular saldo total (soma de todas as contas do usuário)
-  - [ ] 6.1.1.2 Calcular receitas do mês atual
-  - [ ] 6.1.1.3 Calcular despesas do mês atual
-  - [ ] 6.1.1.4 Calcular balanço do mês (receitas - despesas)
-  - [ ] 6.1.1.5 Buscar últimas 5 transações
-  - [ ] 6.1.1.6 Listar contas com saldos
-  - [ ] 6.1.1.7 Passar dados para o contexto
+- [X] **6.1.1** Atualizar view do dashboard
+  - [X] 6.1.1.1 Calcular saldo total (soma de todas as contas do usuário)
+  - [X] 6.1.1.2 Calcular receitas do mês atual
+  - [X] 6.1.1.3 Calcular despesas do mês atual
+  - [X] 6.1.1.4 Calcular balanço do mês (receitas - despesas)
+  - [X] 6.1.1.5 Buscar últimas 5 transações
+  - [X] 6.1.1.6 Listar contas com saldos
+  - [X] 6.1.1.7 Passar dados para o contexto
 
-- [ ] **6.1.2** Atualizar template do dashboard
-  - [ ] 6.1.2.1 Exibir saldo total no card principal
-  - [ ] 6.1.2.2 Exibir receitas do mês com valor em verde
-  - [ ] 6.1.2.3 Exibir despesas do mês com valor em vermelho
-  - [ ] 6.1.2.4 Exibir balanço com cor condicional
-  - [ ] 6.1.2.5 Lista de últimas transações
-  - [ ] 6.1.2.6 Cards de contas com saldos
-  - [ ] 6.1.2.7 Links para ver mais transações/contas
+- [X] **6.1.2** Atualizar template do dashboard
+  - [X] 6.1.2.1 Exibir saldo total no card principal
+  - [X] 6.1.2.2 Exibir receitas do mês com valor em verde
+  - [X] 6.1.2.3 Exibir despesas do mês com valor em vermelho
+  - [X] 6.1.2.4 Exibir balanço com cor condicional
+  - [X] 6.1.2.5 Lista de últimas transações
+  - [X] 6.1.2.6 Cards de contas com saldos
+  - [X] 6.1.2.7 Links para ver mais transações/contas
 
 #### 6.2 Mensagens de Feedback
 
-- [ ] **6.2.1** Configurar sistema de mensagens
-  - [ ] 6.2.1.1 Verificar MessageMiddleware no settings
-  - [ ] 6.2.1.2 Adicionar messages framework context processor
-  - [ ] 6.2.1.3 Criar componente de alert para mensagens
-  - [ ] 6.2.1.4 Estilizar mensagens (success, error, warning, info)
-  - [ ] 6.2.1.5 Adicionar mensagens em todas as views de CRUD
+- [X] **6.2.1** Configurar sistema de mensagens
+  - [X] 6.2.1.1 Verificar MessageMiddleware no settings
+  - [X] 6.2.1.2 Adicionar messages framework context processor
+  - [X] 6.2.1.3 Criar componente de alert para mensagens
+  - [X] 6.2.1.4 Estilizar mensagens (success, error, warning, info)
+  - [X] 6.2.1.5 Adicionar mensagens em todas as views de CRUD
 
 #### 6.3 Navegação e Links
 
-- [ ] **6.3.1** Atualizar sidebar
-  - [ ] 6.3.1.1 Adicionar link para Dashboard
-  - [ ] 6.3.1.2 Adicionar link para Contas
-  - [ ] 6.3.1.3 Adicionar link para Categorias
-  - [ ] 6.3.1.4 Adicionar link para Transações
-  - [ ] 6.3.1.5 Destacar item ativo da navegação
-  - [ ] 6.3.1.6 Adicionar botão de logout
+- [X] **6.3.1** Atualizar sidebar
+  - [X] 6.3.1.1 Adicionar link para Dashboard
+  - [X] 6.3.1.2 Adicionar link para Contas
+  - [X] 6.3.1.3 Adicionar link para Categorias
+  - [X] 6.3.1.4 Adicionar link para Transações
+  - [X] 6.3.1.5 Destacar item ativo da navegação
+  - [X] 6.3.1.6 Adicionar botão de logout
 
-- [ ] **6.3.2** Atualizar navbar (mobile)
-  - [ ] 6.3.2.1 Menu hamburger para mobile
-  - [ ] 6.3.2.2 Links de navegação no menu mobile
-  - [ ] 6.3.2.3 Botão de logout no mobile
+- [X] **6.3.2** Atualizar navbar (mobile)
+  - [X] 6.3.2.1 Menu hamburger para mobile
+  - [X] 6.3.2.2 Links de navegação no menu mobile
+  - [X] 6.3.2.3 Botão de logout no mobile
 
 #### 6.4 Refinamentos de UI
 
-- [ ] **6.4.1** Melhorias visuais
-  - [ ] 6.4.1.1 Adicionar ícones nos botões
-  - [ ] 6.4.1.2 Adicionar ícones na sidebar
-  - [ ] 6.4.1.3 Melhorar espaçamentos
-  - [ ] 6.4.1.4 Adicionar transições e animações sutis
-  - [ ] 6.4.1.5 Verificar responsividade em todas as páginas
+- [X] **6.4.1** Melhorias visuais
+  - [X] 6.4.1.1 Adicionar ícones nos botões
+  - [X] 6.4.1.2 Adicionar ícones na sidebar
+  - [X] 6.4.1.3 Melhorar espaçamentos
+  - [X] 6.4.1.4 Adicionar transições e animações sutis
+  - [X] 6.4.1.5 Verificar responsividade em todas as páginas
 
-- [ ] **6.4.2** Validações e UX
-  - [ ] 6.4.2.1 Validar formulários no frontend (HTML5)
-  - [ ] 6.4.2.2 Melhorar mensagens de erro
-  - [ ] 6.4.2.3 Adicionar loading states (opcional)
-  - [ ] 6.4.2.4 Confirmar exclusões com modal ou página
+- [X] **6.4.2** Validações e UX
+  - [X] 6.4.2.1 Validar formulários no frontend (HTML5)
+  - [X] 6.4.2.2 Melhorar mensagens de erro
+  - [X] 6.4.2.3 Adicionar loading states (opcional)
+  - [X] 6.4.2.4 Confirmar exclusões com modal ou página
 
 ---
 

@@ -9,7 +9,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
 
     <!-- Card: Saldo Total -->
-    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors duration-200 hover:border-gray-700">
         <div class="flex items-center justify-between mb-4">
             <span class="text-sm font-medium text-gray-400">Saldo Total</span>
             <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
@@ -25,7 +25,7 @@
     </div>
 
     <!-- Card: Receitas do Mês -->
-    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors duration-200 hover:border-gray-700">
         <div class="flex items-center justify-between mb-4">
             <span class="text-sm font-medium text-gray-400">Receitas do Mês</span>
             <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
@@ -41,7 +41,7 @@
     </div>
 
     <!-- Card: Despesas do Mês -->
-    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors duration-200 hover:border-gray-700">
         <div class="flex items-center justify-between mb-4">
             <span class="text-sm font-medium text-gray-400">Despesas do Mês</span>
             <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
@@ -57,7 +57,7 @@
     </div>
 
     <!-- Card: Balanço do Mês -->
-    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors duration-200 hover:border-gray-700">
         <div class="flex items-center justify-between mb-4">
             <span class="text-sm font-medium text-gray-400">Balanço do Mês</span>
             <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
@@ -113,7 +113,7 @@
                                 {{ transaction.description|default:"Sem descrição" }}
                             </p>
                             <p class="text-xs text-gray-500">
-                                {{ transaction.category.name|default:"Sem categoria" }} &middot; {{ transaction.date|date:"d/m/Y" }}
+                                {% if transaction.category %}{{ transaction.category.name }}{% else %}Sem categoria{% endif %} &middot; {{ transaction.date|date:"d/m/Y" }}
                             </p>
                         </div>
                     </div>
