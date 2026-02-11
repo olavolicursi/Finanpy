@@ -558,24 +558,24 @@
 
 #### 7.1 Testes Unitários
 
-- [ ] **7.1.1** Testes de Models
-  - [ ] 7.1.1.1 Testes para User model
-  - [ ] 7.1.1.2 Testes para Account model
-  - [ ] 7.1.1.3 Testes para Category model
-  - [ ] 7.1.1.4 Testes para Transaction model
+- [X] **7.1.1** Testes de Models
+  - [X] 7.1.1.1 Testes para User model
+  - [X] 7.1.1.2 Testes para Account model
+  - [X] 7.1.1.3 Testes para Category model
+  - [X] 7.1.1.4 Testes para Transaction model
 
-- [ ] **7.1.2** Testes de Views
-  - [ ] 7.1.2.1 Testes de autenticação
-  - [ ] 7.1.2.2 Testes de CRUD de contas
-  - [ ] 7.1.2.3 Testes de CRUD de categorias
-  - [ ] 7.1.2.4 Testes de CRUD de transações
-  - [ ] 7.1.2.5 Testes de permissões (usuário só vê seus dados)
+- [X] **7.1.2** Testes de Views
+  - [X] 7.1.2.1 Testes de autenticação
+  - [X] 7.1.2.2 Testes de CRUD de contas
+  - [X] 7.1.2.3 Testes de CRUD de categorias
+  - [X] 7.1.2.4 Testes de CRUD de transações
+  - [X] 7.1.2.5 Testes de permissões (usuário só vê seus dados)
 
-- [ ] **7.1.3** Testes de Formulários
-  - [ ] 7.1.3.1 Testes de validação de UserRegistrationForm
-  - [ ] 7.1.3.2 Testes de AccountForm
-  - [ ] 7.1.3.3 Testes de CategoryForm
-  - [ ] 7.1.3.4 Testes de TransactionForm
+- [X] **7.1.3** Testes de Formulários
+  - [X] 7.1.3.1 Testes de validação de UserRegistrationForm
+  - [X] 7.1.3.2 Testes de AccountForm
+  - [X] 7.1.3.3 Testes de CategoryForm
+  - [X] 7.1.3.4 Testes de TransactionForm
 
 #### 7.2 Documentação
 
