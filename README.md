@@ -137,6 +137,8 @@ docker compose up --build
 
 Acesse **http://localhost:8000**. Detalhes (volumes, comandos, produção): **[docs/docker.md](docs/docker.md)**.
 
+Para publicar no **PythonAnywhere** (hosting gratuito): **[docs/pythonanywhere.md](docs/pythonanywhere.md)**.
+
 ## Configuração (desenvolvimento vs produção)
 
 As configurações estão separadas em `core/settings/`:
