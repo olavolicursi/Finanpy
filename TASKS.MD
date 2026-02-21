@@ -579,18 +579,18 @@
 
 #### 7.2 Documentação
 
-- [ ] **7.2.1** README.md
-  - [ ] 7.2.1.1 Descrição do projeto
-  - [ ] 7.2.1.2 Requisitos de sistema
-  - [ ] 7.2.1.3 Instruções de instalação
-  - [ ] 7.2.1.4 Instruções de execução
-  - [ ] 7.2.1.5 Estrutura do projeto
-  - [ ] 7.2.1.6 Screenshots (opcional)
+- [X] **7.2.1** README.md
+  - [X] 7.2.1.1 Descrição do projeto
+  - [X] 7.2.1.2 Requisitos de sistema
+  - [X] 7.2.1.3 Instruções de instalação
+  - [X] 7.2.1.4 Instruções de execução
+  - [X] 7.2.1.5 Estrutura do projeto
+  - [X] 7.2.1.6 Screenshots (opcional)
 
-- [ ] **7.2.2** Comentários no código
-  - [ ] 7.2.2.1 Documentar models com docstrings
-  - [ ] 7.2.2.2 Documentar views complexas
-  - [ ] 7.2.2.3 Documentar funções utilitárias
+- [X] **7.2.2** Comentários no código
+  - [X] 7.2.2.1 Documentar models com docstrings
+  - [X] 7.2.2.2 Documentar views complexas
+  - [X] 7.2.2.3 Documentar funções utilitárias
 
 #### 7.3 Preparação para Deploy (Opcional)
 

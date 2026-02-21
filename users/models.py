@@ -1,3 +1,9 @@
+"""
+User models for the Finanpy project.
+
+Defines the custom User model (email-based authentication) and UserManager
+for creating users and superusers by email.
+"""
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 

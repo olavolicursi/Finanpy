@@ -18,7 +18,12 @@ from transactions.models import Transaction
 
 
 def _apply_transaction_to_balance(account, transaction_type, amount):
-    """Apply a single transaction effect to account balance."""
+    """
+    Apply a single transaction effect to account balance.
+
+    Income increases balance, expense decreases it. Saves the account
+    with updated balance (update_fields=['balance']).
+    """
     amount = Decimal(str(amount))
     if transaction_type == 'income':
         account.balance += amount
@@ -28,7 +33,12 @@ def _apply_transaction_to_balance(account, transaction_type, amount):
 
 
 def _revert_transaction_from_balance(account, transaction_type, amount):
-    """Revert a transaction effect from account balance."""
+    """
+    Revert a transaction effect from account balance.
+
+    Used when editing or deleting a transaction: income is subtracted,
+    expense is added back. Saves the account with updated balance.
+    """
     amount = Decimal(str(amount))
     if transaction_type == 'income':
         account.balance -= amount

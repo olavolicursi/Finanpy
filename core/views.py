@@ -40,6 +40,10 @@ class DashboardView(LoginRequiredMixin, TemplateView):
     template_name = 'dashboard/index.html'
 
     def get_context_data(self, **kwargs):
+        """
+        Build dashboard context: total balance, monthly income/expenses,
+        recent transactions, and accounts list for the authenticated user.
+        """
         context = super().get_context_data(**kwargs)
         user = self.request.user
         now = timezone.now()
