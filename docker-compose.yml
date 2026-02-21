@@ -1,0 +1,28 @@
+# Finanpy - Docker Compose (desenvolvimento/produção leve)
+# Uso: docker compose up --build
+# Acesse: http://localhost:8000
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings.production
+      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+      - SECRET_KEY=${SECRET_KEY:-django-insecure-change-me-in-production}
+      - DEBUG=false
+      - DATABASE_PATH=/app/db_data/db.sqlite3
+    volumes:
+      # Persistência do banco SQLite
+      - db_data:/app/db_data
+      # Arquivos estáticos coletados
+      - static_data:/app/staticfiles
+    # Override para desenvolvimento: use runserver e volume de código
+    # command: sh -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+
+volumes:
+  db_data:
+  static_data:

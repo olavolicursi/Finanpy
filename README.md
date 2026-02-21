@@ -126,6 +126,24 @@ Finanpy/
 | `transactions` | Transações e atualização de saldo das contas       |
 | `profiles`  | Perfil de usuário (estrutura preparada)               |
 
+## Deploy com Docker
+
+Para rodar com Docker e Docker Compose (produção ou ambiente homólogo):
+
+```bash
+cp .env.example .env   # edite .env com SECRET_KEY e ALLOWED_HOSTS
+docker compose up --build
+```
+
+Acesse **http://localhost:8000**. Detalhes (volumes, comandos, produção): **[docs/docker.md](docs/docker.md)**.
+
+## Configuração (desenvolvimento vs produção)
+
+As configurações estão separadas em `core/settings/`:
+
+- **Desenvolvimento** (padrão): `core.settings` ou `core.settings.development` — `DEBUG=True`, `ALLOWED_HOSTS` local.
+- **Produção**: defina `DJANGO_SETTINGS_MODULE=core.settings.production` e as variáveis de ambiente `SECRET_KEY`, `ALLOWED_HOSTS` e, se quiser, `DATABASE_PATH`. Veja `.env.example`.
+
 ## Testes
 
 Executar toda a suíte de testes:

@@ -554,7 +554,7 @@
 
 ---
 
-### Sprint 7: Testes e Documentação (Final)
+### Sprint 7: Testes e Documentação (Final) [X]
 
 #### 7.1 Testes Unitários
 
@@ -594,17 +594,17 @@
 
 #### 7.3 Preparação para Deploy (Opcional)
 
-- [ ] **7.3.1** Configurações de produção
-  - [ ] 7.3.1.1 Separar settings de dev e prod
-  - [ ] 7.3.1.2 Configurar variáveis de ambiente
-  - [ ] 7.3.1.3 Configurar ALLOWED_HOSTS
-  - [ ] 7.3.1.4 Desabilitar DEBUG em produção
-  - [ ] 7.3.1.5 Configurar coleta de arquivos estáticos
+- [X] **7.3.1** Configurações de produção
+  - [X] 7.3.1.1 Separar settings de dev e prod
+  - [X] 7.3.1.2 Configurar variáveis de ambiente
+  - [X] 7.3.1.3 Configurar ALLOWED_HOSTS
+  - [X] 7.3.1.4 Desabilitar DEBUG em produção
+  - [X] 7.3.1.5 Configurar coleta de arquivos estáticos
 
-- [ ] **7.3.2** Docker (Sprint Final)
-  - [ ] 7.3.2.1 Criar Dockerfile
-  - [ ] 7.3.2.2 Criar docker-compose.yml
-  - [ ] 7.3.2.3 Configurar volumes para dados persistentes
-  - [ ] 7.3.2.4 Documentar uso do Docker
+- [X] **7.3.2** Docker (Sprint Final)
+  - [X] 7.3.2.1 Criar Dockerfile
+  - [X] 7.3.2.2 Criar docker-compose.yml
+  - [X] 7.3.2.3 Configurar volumes para dados persistentes
+  - [X] 7.3.2.4 Documentar uso do Docker
 
 ---
